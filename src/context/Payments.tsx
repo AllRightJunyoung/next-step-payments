@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createContext, useState } from 'react';
 import { CardType } from 'types';
 
@@ -25,12 +23,12 @@ export const PaymentsContextProvider = ({ children }: ProviderProps) => {
   const [cardList, setCardList] = useState<CardType[]>([]);
 
   // 카드 리스트에 추가
-  const addCard = (currentCard) => {
+  const addCard = (currentCard: CardType) => {
     setCardList((prevCardList) => [...prevCardList, currentCard]);
   };
 
   // 카드 별칭 업데이트
-  const updateAlias = (currentCard) => {
+  const updateAlias = (currentCard: CardType) => {
     const newCardList = cardList.map((card) => {
       if (currentCard.id === card.id) {
         return {
@@ -43,7 +41,7 @@ export const PaymentsContextProvider = ({ children }: ProviderProps) => {
   };
 
   // 카드 삭제
-  const removeCard = (currentCard) => {
+  const removeCard = (currentCard: CardType) => {
     const newCardList = cardList.filter((card) => card.id !== currentCard.id);
     setCardList(newCardList);
   };

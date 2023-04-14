@@ -40,7 +40,12 @@ export type CardFormInputRefsType = {
   password: HTMLInputElement | null;
 };
 
-export interface CardValidationType extends CardUIType {
-  password: string | undefined;
-  cvc: string | undefined;
+export interface CardValidationType {
+  cardNumbers: string;
+  expireDateMonth: string;
+  expireDateYear: string;
+  ownerName: string;
+  password: string;
+  cvc: string;
+  company: CompanyType;
 }

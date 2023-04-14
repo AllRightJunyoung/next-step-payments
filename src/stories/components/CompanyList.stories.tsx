@@ -1,14 +1,12 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import CompanyList from 'components/CompanyList/CompanyList';
-import CompanyListProps from 'components/CompanyList/CompanyList';
-
+import { CompanyListModal } from 'components/Domain';
 export default {
   title: 'CompanyList',
-  component: CompanyList,
-} as ComponentMeta<typeof CompanyListProps>;
+  component: CompanyListModal,
+} as ComponentMeta<typeof CompanyListModal>;
 
-const Template: ComponentStory<typeof CompanyListProps> = (args) => <CompanyListProps {...args} />;
+const Template: ComponentStory<typeof CompanyListModal> = (args) => <CompanyListModal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

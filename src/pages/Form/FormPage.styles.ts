@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Text, Button, IconButton, Card } from 'components/common';
+import { Text, Button, IconButton, Card } from 'components/UI';
 
 export const Layout = styled.div`
   height: 100%;

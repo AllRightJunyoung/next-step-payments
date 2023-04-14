@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Card, Input, Text, Button } from 'components/common';
+import { Card, Text, Button, FormInput } from 'components/UI';
 
 export const Layout = styled.div`
   display: flex;
@@ -34,6 +34,6 @@ export const ButtonWrapper = styled.div`
   margin: 30px;
 `;
 export const AliasCard = styled(Card)``;
-export const AliasInput = styled(Input)``;
+export const AliasInput = styled(FormInput)``;
 export const AliasText = styled(Text)``;
 export const NextButton = styled(Button)``;

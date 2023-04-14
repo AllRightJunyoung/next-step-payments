@@ -1,7 +1,7 @@
 import { CardType } from 'types';
 import { getCardCompnayColor } from 'utils/Card';
 import * as Styled from './MyCardListPage.styles';
-import useMyCardListPage from 'hooks/useMyCardListPage';
+import useMyCardListPage from 'hooks/pages/useMyCardListPage';
 
 const MyCardListPage = () => {
   const { myCardList, push } = useMyCardListPage();

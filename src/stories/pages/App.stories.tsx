@@ -1,7 +1,6 @@
-import { ComponentMeta } from '@storybook/react';
+import type { ComponentMeta } from '@storybook/react';
 import { withRouter } from 'storybook-addon-react-router-v6';
-import { Routes } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import FormPage from 'pages/Form/FormPage';
 import AliasPage from 'pages/Alias/AliasPage';
 import MyCardListPage from 'pages/MyCardList/MyCardListPage';
@@ -16,7 +15,7 @@ export default {
   decorators: [withRouter, withReactContext],
 } as ComponentMeta<typeof App>;
 
-const CompositionTemplate = ({ outlet }) => (
+const CompositionTemplate = () => (
   <PaymentsContextProvider>
     <Routes>
       <Route element={<MyCardListPage />} path="/"></Route>

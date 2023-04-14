@@ -1,38 +1,26 @@
-import { useEffect } from 'react';
 import * as Styled from './FormPage.styles';
-
-import useFormPage from 'hooks/useFormPage';
-import useFormInput from 'hooks/useFormInput';
-import useHandleCardUI from 'hooks/useHandleCardUI';
-import useToggle from 'hooks/useToggle';
+import { CardForm, CompanyListModal } from 'components/Domain';
 import { getCardCompnayColor } from 'utils/Card';
-import { isValidCompany } from 'utils/InputValidation';
-import { CompanyList } from 'components/CompanyList/CompanyList';
-import { CardForm } from 'components/CardForm';
+import { useUI } from 'hooks/common';
+import { useCardFormInput } from 'hooks/Domain';
+import { useCardUI } from 'hooks/UI';
+import useFormPage from 'hooks/pages/useFormPage';
 
 const FormPage = () => {
-  const { isOpen, setIsOpen } = useToggle();
-  const { cardUI, setCardUI } = useHandleCardUI();
+  const { isOpen, setIsOpen } = useUI();
+  const { cardUI, setCardUI } = useCardUI();
   const cardUIState = {
-    state: cardUI,
-    setState: setCardUI,
+    cardUIState: cardUI,
+    setCardUIState: setCardUI,
   };
 
   const { cardFormInputs, handleCardNumberInput, handleExpireMonthInput, handleExpireYearInput, handleOwnerNameInput } =
-    useFormInput(cardUIState);
+    useCardFormInput(cardUIState);
 
-  const { handleCompanyList, handleBackButton, handleSubmit } = useFormPage({
+  const { handleBackButton, submit } = useFormPage({
     ...cardUIState,
     formRefs: cardFormInputs,
   });
-
-  useEffect(() => {
-    if (isValidCompany(cardUI.company)) {
-      setIsOpen(false);
-    }
-  }, [cardUI.company]);
-
-  const cardColor = getCardCompnayColor(cardUI.company);
 
   return (
     <Styled.Layout>
@@ -41,11 +29,11 @@ const FormPage = () => {
         <Styled.FormPageText fontSize="lg" weight="bold" label="카드추가" />
       </Styled.Header>
       <div>
-        {isOpen && <CompanyList onSelect={handleCompanyList} onClose={setIsOpen} />}
+        {isOpen && <CompanyListModal setCardUIState={setCardUI} onClose={setIsOpen} />}
         <Styled.FormPageCard
           type="primary"
           onClick={() => setIsOpen(true)}
-          color={cardColor}
+          color={getCardCompnayColor(cardUI.company)}
           company={cardUI.company}
           size="small"
           number={cardUI.cardNumbers}
@@ -62,7 +50,7 @@ const FormPage = () => {
           onOwnerNameInput={handleOwnerNameInput}
         />
         <Styled.ButtonBox>
-          <Styled.NextButton fontSize="m" onClick={handleSubmit} label="Next" />
+          <Styled.NextButton fontSize="m" onClick={submit} label="Next" />
         </Styled.ButtonBox>
       </div>
     </Styled.Layout>

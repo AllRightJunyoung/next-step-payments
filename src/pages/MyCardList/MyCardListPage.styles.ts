@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Card, Text } from 'components/common';
+import { Card, Text } from 'components/UI';
 
 export const Layout = styled.div`
   display: flex;

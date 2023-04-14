@@ -1,6 +1,6 @@
 import type { CardValidationType } from 'types';
 import { reportError, ValidationError } from 'utils/error';
-export const isCardFormValidation = (form: CardValidationType): boolean | number => {
+export const isCardFormValidation = (form: CardValidationType) => {
   const isValid =
     isValidCardNumber(form.cardNumbers) &&
     isValidCompany(form.company) &&
@@ -20,19 +20,19 @@ export const isCardFormValidation = (form: CardValidationType): boolean | number
 };
 
 export const isValidExpirationDate = (date: string) => {
-  return date?.length === 2;
+  return date.length === 2;
 };
 
 export const isValidCompany = (company: string) => {
   return company.length;
 };
-export const isValidSecurityCode = (code: string | undefined) => {
-  return code?.length === 3;
+export const isValidSecurityCode = (code: string) => {
+  return code.length === 3;
 };
 export const isValidCardNumber = (cardNumber: string) => {
-  return cardNumber?.length === 19;
+  return cardNumber.length === 19;
 };
 
-export const isValidPasswordNumber = (password: string | undefined) => {
-  return password?.length === 4;
+export const isValidPasswordNumber = (password: string) => {
+  return password.length === 4;
 };

@@ -1,5 +1,5 @@
 import * as Styled from './AliasPage.styles';
-import useAliasPage from 'hooks/useAliasPage';
+import useAliasPage from 'hooks/pages/useAliasPage';
 import { getCardCompnayColor } from 'utils/Card';
 
 const AliasPage = () => {
