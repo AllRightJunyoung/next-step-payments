@@ -1,13 +1,14 @@
 import * as Styled from './HelpIcon.styles';
 import { IconButton } from 'components/UI';
 import { useUI } from 'hooks/common';
+import type { HelpProps } from './HelpIcon.types';
 
-const HelpIcon = () => {
+const HelpIcon = ({ children, ...attribute }: HelpProps) => {
   const { isOpen, setIsOpen } = useUI();
 
   return (
     <Styled.Layout>
-      {isOpen && <Styled.ToolTip>카드 뒤 3자리</Styled.ToolTip>}
+      {isOpen && <Styled.ToolTip {...attribute}>{children}</Styled.ToolTip>}
       <IconButton
         name="help"
         size="2x"

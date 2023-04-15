@@ -18,7 +18,7 @@ const CardSecurity = ({ fontColor, refs }: CardSecurityProps) => {
             active={true}
             disabled={true}
           />
-          <HelpIcon />
+          <HelpIcon>카드 뒤 3자리</HelpIcon>
           <KeyBoardIconButton onClick={() => showUI('cvc')} />
         </Styled.Box>
       </Styled.Container>

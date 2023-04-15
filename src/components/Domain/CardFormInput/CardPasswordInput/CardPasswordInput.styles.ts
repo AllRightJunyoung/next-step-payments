@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Text, FormInput } from 'components/UI';
+import { Text, FormInput, HelpIcon } from 'components/UI';
 
 export const Layout = styled.div`
   margin-top: 20px;
@@ -20,4 +20,13 @@ export const Box = styled.div`
 export const CardPasswordInput = styled(FormInput)`
   width: 25%;
   font-size: 30px;
+`;
+export const IconBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const CardPassWordHelpIcon = styled(HelpIcon)`
+  width: 126px;
+  height: fit-content;
 `;

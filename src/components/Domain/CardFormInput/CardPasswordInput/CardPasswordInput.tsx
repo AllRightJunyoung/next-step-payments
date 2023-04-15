@@ -1,8 +1,7 @@
 import type { CardPasswordInputProps } from './CardPasswordInput.types';
 import * as Styled from './CardPasswordInput.styles';
-import { KeyBoardIconButton } from 'components/UI';
+import { KeyBoardIconButton, HelpIcon } from 'components/UI';
 import { useVirtualKeyBoard } from 'hooks/Domain';
-
 const CardPasswordInput = ({ refs, fontColor }: CardPasswordInputProps) => {
   const { showUI } = useVirtualKeyBoard(refs);
 
@@ -19,7 +18,10 @@ const CardPasswordInput = ({ refs, fontColor }: CardPasswordInputProps) => {
           disabled={true}
           maxLength={4}
         />
-        <KeyBoardIconButton onClick={() => showUI('password')} />
+        <Styled.IconBox>
+          <Styled.CardPassWordHelpIcon>비밀번호 4자리</Styled.CardPassWordHelpIcon>
+          <KeyBoardIconButton onClick={() => showUI('password')} />
+        </Styled.IconBox>
       </Styled.Box>
     </Styled.Layout>
   );
