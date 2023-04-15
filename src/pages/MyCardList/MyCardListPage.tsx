@@ -26,7 +26,13 @@ const MyCardListPage = () => {
               expireYear={card.expireDate.year}
               ownerName={card.ownerName}
             />
-            <Text fontSize="m" weight="bold" label={card.alias} key={card.id} />
+            <Text
+              fontSize="m"
+              weight="bold"
+              label={card.alias}
+              key={card.id}
+              fontColor={getCardCompnayColor(card.company)}
+            />
           </Styled.CardLayout>
         ))}
       </Styled.ScrollContainer>

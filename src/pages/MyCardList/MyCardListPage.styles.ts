@@ -38,4 +38,8 @@ export const CardLayout = styled.div`
   align-items: center;
   margin-bottom: 20px;
   gap: 20px;
+  padding-bottom: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 7px;
+  background-color: whitesmoke;
 `;
