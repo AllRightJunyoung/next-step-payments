@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Text, FormInput } from 'components/UI';
+import { Text } from 'components/UI';
 
 export const Layout = styled.div`
   margin-top: 20px;
@@ -19,5 +19,3 @@ export const Container = styled.div`
   width: 50%;
   gap: 5px;
 `;
-export const CardExiprationDateInput = styled(FormInput)``;
-export const CardExiprationDateText = styled(Text)``;

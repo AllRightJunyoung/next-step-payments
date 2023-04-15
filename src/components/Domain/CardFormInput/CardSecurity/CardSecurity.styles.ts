@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Text, HelpIcon, FormInput } from 'components/UI';
+import { Text, FormInput } from 'components/UI';
 
 export const Layout = styled.div`
   margin-top: 20px;
@@ -26,4 +26,3 @@ export const Box = styled.div`
   display: flex;
   align-items: center;
 `;
-export const HelpButton = styled(HelpIcon)``;

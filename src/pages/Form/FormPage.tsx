@@ -5,6 +5,7 @@ import { useUI } from 'hooks/common';
 import { useCardForm } from 'hooks/Domain';
 import useFormPage from 'hooks/pages/useFormPage';
 import { VirtualKeyBoardContextProvider } from 'context/VirtualKeyBoard';
+import { Text, Button, IconButton, Card } from 'components/UI';
 
 const FormPage = () => {
   const { isOpen, setIsOpen } = useUI();
@@ -28,12 +29,12 @@ const FormPage = () => {
     <VirtualKeyBoardContextProvider>
       <Styled.Layout>
         <Styled.Header>
-          <Styled.LeftButton onClick={handleBackButton} name="arrowLeft" size="2xl" color="#575757" />
-          <Styled.FormPageText fontSize="lg" weight="bold" label="카드추가" />
+          <IconButton onClick={handleBackButton} name="arrowLeft" size="2xl" color="#575757" />
+          <Text fontSize="lg" weight="bold" label="카드추가" />
         </Styled.Header>
         <div>
           {isOpen && <CompanyListModal onSelectCompanyList={handleCompanyList} onClose={setIsOpen} />}
-          <Styled.FormPageCard
+          <Card
             type="primary"
             onClick={() => setIsOpen(true)}
             color={getCardCompnayColor(cardUI.company)}
@@ -53,7 +54,7 @@ const FormPage = () => {
             onOwnerNameInput={handleOwnerNameInput}
           />
           <Styled.ButtonBox>
-            <Styled.NextButton fontSize="m" onClick={submit} label="Next" />
+            <Button fontSize="m" onClick={submit} label="Next" />
           </Styled.ButtonBox>
         </div>
       </Styled.Layout>

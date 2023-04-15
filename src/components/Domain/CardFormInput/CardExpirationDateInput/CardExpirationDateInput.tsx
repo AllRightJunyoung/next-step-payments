@@ -1,5 +1,6 @@
 import { CardExpirationDateInputProps } from './CardExpirationDateInput.types';
 import * as Styled from './CardExpirationDateInput.styles';
+import { FormInput, Text } from 'components/UI';
 
 const CardExpirationDateInput = ({
   onChangeMonth,
@@ -15,7 +16,7 @@ const CardExpirationDateInput = ({
     <Styled.Layout>
       <Styled.Title fontSize="xs" weight="bold" label="만료일" />
       <Styled.Container>
-        <Styled.CardExiprationDateInput
+        <FormInput
           type="text"
           placeholder="MM"
           theme="primary"
@@ -25,7 +26,7 @@ const CardExpirationDateInput = ({
           active={true}
           error={!isValidMonth}
         />
-        <Styled.CardExiprationDateInput
+        <FormInput
           type="text"
           placeholder="YY"
           theme="primary"
@@ -37,12 +38,7 @@ const CardExpirationDateInput = ({
         />
       </Styled.Container>
       {!isValid && (
-        <Styled.CardExiprationDateText
-          fontSize="xs"
-          weight="bold"
-          label="2자리씩 입력하세요. MM (01~12) / YY (23~) "
-          fontColor="red"
-        />
+        <Text fontSize="xs" weight="bold" label="2자리씩 입력하세요. MM (01~12) / YY (23~) " fontColor="red" />
       )}
     </Styled.Layout>
   );

@@ -1,6 +1,6 @@
 import type { CardSecurityProps } from './CardSecurity.types';
 import * as Styled from './CardSecurity.styles';
-import { KeyBoardIconButton } from 'components/UI';
+import { KeyBoardIconButton, HelpIcon } from 'components/UI';
 import { useVirtualKeyBoard } from 'hooks/Domain';
 
 const CardSecurity = ({ fontColor, refs }: CardSecurityProps) => {
@@ -18,7 +18,7 @@ const CardSecurity = ({ fontColor, refs }: CardSecurityProps) => {
             active={true}
             disabled={true}
           />
-          <Styled.HelpButton />
+          <HelpIcon />
           <KeyBoardIconButton onClick={() => showUI('cvc')} />
         </Styled.Box>
       </Styled.Container>

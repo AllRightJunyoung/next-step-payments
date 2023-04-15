@@ -3,6 +3,8 @@ import { getCardCompnayColor } from 'utils/Card';
 import * as Styled from './MyCardListPage.styles';
 import useMyCardListPage from 'hooks/pages/useMyCardListPage';
 
+import { Card, Text } from 'components/UI';
+
 const MyCardListPage = () => {
   const { myCardList, push } = useMyCardListPage();
 
@@ -13,7 +15,7 @@ const MyCardListPage = () => {
         <Styled.AddCard type="add" size="small" onClick={() => push('/form')} />
         {myCardList.map((card: CardType) => (
           <Styled.CardLayout key={card.id}>
-            <Styled.MyCard
+            <Card
               type="primary"
               id={card.id}
               color={getCardCompnayColor(card.company)}
@@ -24,7 +26,7 @@ const MyCardListPage = () => {
               expireYear={card.expireDate.year}
               ownerName={card.ownerName}
             />
-            <Styled.MyCardText fontSize="m" weight="bold" label={card.alias} key={card.id} />
+            <Text fontSize="m" weight="bold" label={card.alias} key={card.id} />
           </Styled.CardLayout>
         ))}
       </Styled.ScrollContainer>

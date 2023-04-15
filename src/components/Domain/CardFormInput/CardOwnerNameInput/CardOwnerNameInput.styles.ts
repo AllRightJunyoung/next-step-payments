@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Text, FormInput } from 'components/UI';
+import { Text } from 'components/UI';
 
 export const Layout = styled.div`
   margin-top: 20px;
@@ -14,4 +14,3 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-export const CardOwnerNameInput = styled(FormInput)``;

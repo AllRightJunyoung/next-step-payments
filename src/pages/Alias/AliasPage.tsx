@@ -1,6 +1,7 @@
 import * as Styled from './AliasPage.styles';
 import useAliasPage from 'hooks/pages/useAliasPage';
 import { getCardCompnayColor } from 'utils/Card';
+import { Card, Text, Button, FormInput } from 'components/UI';
 
 const AliasPage = () => {
   const { handleSubmit, handleInput, currentCard, inputRef, inputLength } = useAliasPage();
@@ -13,13 +14,13 @@ const AliasPage = () => {
     <Styled.Layout>
       <Styled.TextWrapper>
         {!currentCard.alias.length ? (
-          <Styled.AliasText fontSize="lg" weight="bold" label="카드 등록이 완료되었습니다."></Styled.AliasText>
+          <Text fontSize="lg" weight="bold" label="카드 등록이 완료되었습니다."></Text>
         ) : (
-          <Styled.AliasText fontSize="lg" weight="bold" label="카드 별칭 수정"></Styled.AliasText>
+          <Text fontSize="lg" weight="bold" label="카드 별칭 수정"></Text>
         )}
       </Styled.TextWrapper>
       <Styled.CardWrapper>
-        <Styled.AliasCard
+        <Card
           type="primary"
           size="big"
           color={getCardCompnayColor(currentCard.company)}
@@ -31,7 +32,7 @@ const AliasPage = () => {
         />
       </Styled.CardWrapper>
       <Styled.Box>
-        <Styled.AliasInput
+        <FormInput
           type="text"
           placeholder="카드의 별칭 (선택) "
           theme="underline"
@@ -39,10 +40,10 @@ const AliasPage = () => {
           ref={inputRef}
           onChange={handleInput}
         />
-        <Styled.AliasText fontSize="s" weight="normal" label={`${inputLength}/10`} />
+        <Text fontSize="s" weight="normal" label={`${inputLength}/10`} />
       </Styled.Box>
       <Styled.ButtonWrapper>
-        <Styled.NextButton fontSize="lg" label="Next" onClick={handleSubmit} />
+        <Button fontSize="lg" label="Next" onClick={handleSubmit} />
       </Styled.ButtonWrapper>
     </Styled.Layout>
   );

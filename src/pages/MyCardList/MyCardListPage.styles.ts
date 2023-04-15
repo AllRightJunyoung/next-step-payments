@@ -39,5 +39,3 @@ export const CardLayout = styled.div`
   margin-bottom: 20px;
   gap: 20px;
 `;
-export const MyCard = styled(Card)``;
-export const MyCardText = styled(Text)``;

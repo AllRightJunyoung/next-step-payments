@@ -53,7 +53,7 @@ const useCardForm = () => {
     }
     setCardUI((prev) => ({
       ...prev,
-      expireDateMonth: !month.length ? 'MM' : month,
+      expireDateMonth: month,
     }));
   };
 

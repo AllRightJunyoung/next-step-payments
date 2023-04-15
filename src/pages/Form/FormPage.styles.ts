@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Text, Button, IconButton, Card } from 'components/UI';
 
 export const Layout = styled.div`
   height: 100%;
@@ -18,7 +17,3 @@ export const ButtonBox = styled.div`
   width: 100%;
   text-align: right;
 `;
-export const FormPageText = styled(Text)``;
-export const FormPageCard = styled(Card)``;
-export const NextButton = styled(Button)``;
-export const LeftButton = styled(IconButton)``;
