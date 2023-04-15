@@ -1,6 +1,4 @@
-import type { CardUIType } from 'types';
-
 export type CompanyListModalProps = {
-  setCardUIState: React.Dispatch<React.SetStateAction<CardUIType>>;
+  onSelectCompanyList: (e: React.MouseEvent) => void;
   onClose: React.Dispatch<React.SetStateAction<boolean>>;
 };

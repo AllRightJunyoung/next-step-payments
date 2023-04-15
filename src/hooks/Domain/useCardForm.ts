@@ -1,14 +1,20 @@
-import { CardFormInputRefsType, CardUIType } from 'types';
-import { useRef } from 'react';
+import { CardFormInputRefsType, CardUIType, CompanyType } from 'types';
+import { useRef, useState } from 'react';
 import { changeCardNumber, changeMonth, changeOwnerName, changeYear } from 'utils/InputChange';
 import { isValidCardNumber, isValidExpirationDate } from 'utils/InputValidation';
 import { getCardNumberCompnay } from 'utils/Card';
-interface PropsType {
-  cardUIState: CardUIType;
-  setCardUIState: React.Dispatch<React.SetStateAction<CardUIType>>;
-}
-const useCardFormInput = ({ cardUIState, setCardUIState }: PropsType) => {
+
+const initialCardCardUI: CardUIType = {
+  cardNumbers: '',
+  expireDateMonth: '',
+  expireDateYear: '',
+  ownerName: '',
+  company: '',
+};
+
+const useCardForm = () => {
   const inputRefs = useRef(new Array(10));
+  const [cardUI, setCardUI] = useState(initialCardCardUI);
 
   const cardFormInputs: CardFormInputRefsType = {
     cardNumbers: inputRefs.current[0],
@@ -29,7 +35,7 @@ const useCardFormInput = ({ cardUIState, setCardUIState }: PropsType) => {
     if (isNext) {
       cardFormInputs.expireDateMonth?.focus();
     }
-    setCardUIState((prev) => ({
+    setCardUI((prev) => ({
       ...prev,
       cardNumbers: cardNumbers,
       company: cardCompany,
@@ -45,7 +51,7 @@ const useCardFormInput = ({ cardUIState, setCardUIState }: PropsType) => {
     if (isValidExpirationDate(month)) {
       yearRef.focus();
     }
-    setCardUIState((prev) => ({
+    setCardUI((prev) => ({
       ...prev,
       expireDateMonth: !month.length ? 'MM' : month,
     }));
@@ -66,7 +72,7 @@ const useCardFormInput = ({ cardUIState, setCardUIState }: PropsType) => {
     if (isValidExpirationDate(month) && isValidExpirationDate(year)) {
       ownerNameRef?.focus();
     }
-    setCardUIState((prev) => ({
+    setCardUI((prev) => ({
       ...prev,
       expireDateYear: year,
     }));
@@ -77,9 +83,18 @@ const useCardFormInput = ({ cardUIState, setCardUIState }: PropsType) => {
     if (!ownerNameRef) return;
     const ownerName = changeOwnerName(ownerNameRef.value);
     ownerNameRef.value = ownerName;
-    setCardUIState((prev) => ({
+    setCardUI((prev) => ({
       ...prev,
       ownerName: ownerName.length ? ownerName : 'Name',
+    }));
+  };
+
+  const handleCompanyList = (e: React.MouseEvent) => {
+    const target = e.currentTarget as HTMLElement;
+    const company = target.children[1].textContent as CompanyType;
+    setCardUI((prev) => ({
+      ...prev,
+      company,
     }));
   };
 
@@ -89,6 +104,8 @@ const useCardFormInput = ({ cardUIState, setCardUIState }: PropsType) => {
     handleExpireMonthInput,
     handleExpireYearInput,
     handleOwnerNameInput,
+    handleCompanyList,
+    cardUI,
   };
 };
-export default useCardFormInput;
+export default useCardForm;

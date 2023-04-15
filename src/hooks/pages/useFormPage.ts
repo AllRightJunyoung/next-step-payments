@@ -6,11 +6,11 @@ import uuid from 'react-uuid';
 import useRouter from 'routes/useRouter';
 
 interface PropsType {
-  cardUIState: CardUIType;
+  cardUI: CardUIType;
   formRefs: CardFormInputRefsType;
 }
 
-const useFormPage = ({ cardUIState, formRefs }: PropsType) => {
+const useFormPage = ({ cardUI, formRefs }: PropsType) => {
   const paymentsCtx = useContext(PaymentsContext);
 
   const { push } = useRouter();
@@ -21,8 +21,8 @@ const useFormPage = ({ cardUIState, formRefs }: PropsType) => {
 
   const submit = () => {
     if (!formRefs.password || !formRefs.cvc) return;
-    const currentFormCard = cardUIState;
-    const newCardValidation = { ...cardUIState, password: formRefs.password.value, cvc: formRefs.cvc.value };
+    const currentFormCard = cardUI;
+    const newCardValidation = { ...cardUI, password: formRefs.password.value, cvc: formRefs.cvc.value };
     if (!isCardFormValidation(newCardValidation)) return;
 
     const newCard = {

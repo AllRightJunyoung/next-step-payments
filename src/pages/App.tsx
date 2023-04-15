@@ -1,18 +1,15 @@
 import styled from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
 import { PaymentsContextProvider } from 'context/Payments';
-import { VirtualKeyBoardContextProvider } from 'context/VirtualKeyBoard';
 import Routes from 'routes';
 
 function App() {
   return (
     <Layout>
-      <VirtualKeyBoardContextProvider>
-        <PaymentsContextProvider>
-          <GlobalStyle />
-          <Routes />
-        </PaymentsContextProvider>
-      </VirtualKeyBoardContextProvider>
+      <PaymentsContextProvider>
+        <GlobalStyle />
+        <Routes />
+      </PaymentsContextProvider>
     </Layout>
   );
 }
