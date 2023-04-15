@@ -38,7 +38,7 @@ const Card = ({
             {number && <Text fontSize="m" weight="normal" label={number} />}
             <Styled.InfoContainer>
               {!ownerName ? (
-                <Text fontSize="s" weight="bold" label={'Empty'} />
+                <Text fontSize="s" weight="bold" label={'Name'} />
               ) : (
                 <Text fontSize="s" weight="bold" label={ownerName} />
               )}

@@ -1,7 +1,7 @@
 import { CardFormInputRefsType, CardUIType, CompanyType } from 'types';
 import { useRef, useState } from 'react';
 import { changeCardNumber, changeMonth, changeOwnerName, changeYear } from 'utils/InputChange';
-import { isValidCardNumber, isValidExpirationDate } from 'utils/InputValidation';
+import { isValidCardNumber, isValidExpirationMonth, isValidExpirationYear } from 'utils/InputValidation';
 import { getCardNumberCompnay } from 'utils/Card';
 
 const initialCardCardUI: CardUIType = {
@@ -48,7 +48,7 @@ const useCardForm = () => {
     const month = changeMonth(monthRef.value);
     monthRef.value = month;
     if (!yearRef) return;
-    if (isValidExpirationDate(month)) {
+    if (isValidExpirationMonth(month)) {
       yearRef.focus();
     }
     setCardUI((prev) => ({
@@ -66,10 +66,10 @@ const useCardForm = () => {
     yearRef.value = year;
     if (!monthRef) return;
     const month = changeMonth(monthRef.value);
-    if (isValidExpirationDate(year)) {
+    if (isValidExpirationMonth(year)) {
       yearRef.focus();
     }
-    if (isValidExpirationDate(month) && isValidExpirationDate(year)) {
+    if (isValidExpirationMonth(month) && isValidExpirationYear(year)) {
       ownerNameRef?.focus();
     }
     setCardUI((prev) => ({
@@ -85,7 +85,7 @@ const useCardForm = () => {
     ownerNameRef.value = ownerName;
     setCardUI((prev) => ({
       ...prev,
-      ownerName: ownerName.length ? ownerName : 'Name',
+      ownerName,
     }));
   };
 

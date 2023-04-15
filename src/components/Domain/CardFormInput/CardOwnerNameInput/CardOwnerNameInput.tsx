@@ -1,7 +1,8 @@
 import type { CardOwnerNameInputProps } from './CardOwnerNameInput.types';
 import * as Styled from './CardOwnerNameInput.styles';
+import { Text } from 'components/UI';
 
-const CardOwnerNameInput = ({ onChange, fontColor, refs, length }: CardOwnerNameInputProps) => {
+const CardOwnerNameInput = ({ onChange, fontColor, refs, length, isValid }: CardOwnerNameInputProps) => {
   return (
     <Styled.Layout>
       <Styled.Container>
@@ -16,7 +17,11 @@ const CardOwnerNameInput = ({ onChange, fontColor, refs, length }: CardOwnerName
         onChange={onChange}
         fontColor={fontColor}
         active={true}
+        error={!isValid}
       />
+      {!isValid && (
+        <Text fontSize="xs" weight="bold" label="소유자 이름은 3자리이상이고 문자여야 합니다." fontColor="red" />
+      )}
     </Styled.Layout>
   );
 };

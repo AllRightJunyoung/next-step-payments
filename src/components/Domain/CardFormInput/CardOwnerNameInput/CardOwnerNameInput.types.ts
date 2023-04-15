@@ -5,4 +5,5 @@ export type CardOwnerNameInputProps = {
   onChange?: () => void;
   refs: CardFormInputRefsType;
   length: number;
+  isValid: boolean;
 };

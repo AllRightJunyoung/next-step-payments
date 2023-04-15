@@ -8,7 +8,7 @@ import {
 } from '../CardFormInput';
 
 import type { CardFormProps } from './CardForm.types';
-import { isValidCardNumber, isValidExpirationDate } from 'utils/InputValidation';
+import { isValidFormUI } from 'utils/InputValidation';
 import { getCardCompnayColor } from 'utils/Card';
 
 const CardForm = ({
@@ -24,7 +24,7 @@ const CardForm = ({
     <div>
       <CardNumberInput
         onChange={onCardNumberInput}
-        isValid={cardUI.cardNumbers.length === 0 ? true : isValidCardNumber(cardUI.cardNumbers)}
+        isValid={isValidFormUI(cardUI.cardNumbers, 'cardNumber')}
         fontColor={cardColor}
         refs={refs}
       />
@@ -33,14 +33,15 @@ const CardForm = ({
         onChangeYear={onExpireYearInput}
         fontColor={cardColor}
         refs={refs}
-        isValidMonth={cardUI.expireDateMonth.length === 0 ? true : isValidExpirationDate(cardUI.expireDateMonth)}
-        isValidYear={cardUI.expireDateYear.length === 0 ? true : isValidExpirationDate(cardUI.expireDateYear)}
+        isValidMonth={isValidFormUI(cardUI.expireDateMonth, 'month')}
+        isValidYear={isValidFormUI(cardUI.expireDateYear, 'year')}
       />
       <CardOwnerNameInput
         onChange={onOwnerNameInput}
         fontColor={cardColor}
         refs={refs}
         length={cardUI.ownerName.length}
+        isValid={isValidFormUI(cardUI.ownerName, 'ownerName')}
       />
       <VirtualKeyBoard refs={refs} />
       <CardSecurity fontColor={cardColor} refs={refs} />
