@@ -31,7 +31,7 @@ export const Key = styled.button`
   padding: 25px 0px;
   cursor: pointer;
   :hover {
-    border: 1px solid #eeeeee;
+    background-color: bisque;
   }
 `;
 
