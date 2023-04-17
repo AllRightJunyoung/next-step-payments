@@ -15,7 +15,12 @@
     "resolveJsonModule": true,
     "jsx": "react-jsx",
     "outDir": "./dist",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "noEmit": false,
+    "declaration": true,
+    "outDir": "./dist"
+
+
   },
   "include": ["src", "public"]
 }

@@ -1,7 +1,10 @@
 {
-  "name": "2weeks",
+  "name": "react-payment-junyoung",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main":"dist/index.js",
+  "types": "dist/index.d.ts",
+  "browser": "./browser/specific/main.js",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
@@ -29,7 +32,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "npx chromatic --project-token=893197aca9e3"
+    "chromatic": "npx chromatic --project-token=893197aca9e3",
+    "prepare": "rm -rf dist && mkdir dist && tsc"
   },
   "browserslist": {
     "production": [
@@ -86,6 +90,14 @@
       }
     ]
   },
+  "description": "next-step react-payments app",
+  "keywords": ["react","next-step","payment"],
+  "author": {"name": "thegiantKiller"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thegiantkiller"
+  },
+  "contributors" : ["thegiantkiller"],
   "readme": "ERROR: No README data found!",
   "_id": "2weeks@0.1.0"
 }
