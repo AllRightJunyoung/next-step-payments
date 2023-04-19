@@ -4,9 +4,13 @@ import { CardContextProvider } from './context/Card';
 import { AppContextProvider } from './context/App';
 import PaymentApp from './PaymentApp';
 
-function App() {
+interface AppProps {
+  className?: string;
+}
+
+function App({ className }: AppProps) {
   return (
-    <Layout>
+    <Layout className={className}>
       <GlobalStyle />
       <AppContextProvider>
         <CardContextProvider>
