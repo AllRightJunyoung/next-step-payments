@@ -1,11 +1,11 @@
 import * as Styled from './FormPage.styles';
-import { CardForm, CompanyListModal } from 'components/Domain';
-import { getCardCompnayColor } from 'utils/Card';
-import { useUI } from 'hooks/common';
-import { useCardForm } from 'hooks/Domain';
-import useFormPage from 'hooks/pages/useFormPage';
-import { VirtualKeyBoardContextProvider } from 'context/VirtualKeyBoard';
-import { Text, Button, IconButton, Card } from 'components/UI';
+import { CardForm, CompanyListModal } from '../../components/Domain';
+import { getCardCompnayColor } from '../../utils/Card';
+import { useUI } from '../../hooks/common';
+import { useCardForm } from '../../hooks/Domain';
+import useFormPage from '../../hooks/pages/useFormPage';
+import { VirtualKeyBoardContextProvider } from '../../context/VirtualKeyBoard';
+import { Text, Button, IconButton, Card } from '../../components/UI';
 
 const FormPage = () => {
   const { isOpen, setIsOpen } = useUI();

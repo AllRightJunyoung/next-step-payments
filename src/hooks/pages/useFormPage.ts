@@ -1,6 +1,6 @@
 import { CardUIType, CardFormInputRefsType } from 'types';
 import { useContext } from 'react';
-import { PaymentsContext } from 'context/Payments';
+import { CardContext } from '../../context/Card';
 import { isCardFormValidation } from 'utils/InputValidation';
 import uuid from 'react-uuid';
 import useRouter from 'routes/useRouter';
@@ -11,7 +11,7 @@ interface PropsType {
 }
 
 const useFormPage = ({ cardUI, formRefs }: PropsType) => {
-  const paymentsCtx = useContext(PaymentsContext);
+  const cardCtx = useContext(CardContext);
 
   const { push } = useRouter();
 
@@ -36,7 +36,7 @@ const useFormPage = ({ cardUI, formRefs }: PropsType) => {
       alias: '',
       id: uuid(),
     };
-    paymentsCtx.addCard(newCard);
+    cardCtx.addCard(newCard);
     localStorage.setItem('id', newCard.id);
     push('/alias');
   };

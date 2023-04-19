@@ -1,17 +1,17 @@
 import { useContext } from 'react';
-import { CardType } from 'types';
+import { CardType } from '../../types';
 import { useNavigate } from 'react-router-dom';
-import { PaymentsContext } from 'context/Payments';
+import { CardContext } from '../../context/Card';
 
 const useCard = (id: string | undefined) => {
-  const paymentCtx = useContext(PaymentsContext);
-  const myCardList = paymentCtx.cardList;
+  const CardCtx = useContext(CardContext);
+  const myCardList = CardCtx.cardList;
   const currentCard = myCardList.find((card: CardType) => card.id === id);
   const navigate = useNavigate();
 
   const remove = () => {
     if (!currentCard) return;
-    paymentCtx.removeCard(currentCard);
+    CardCtx.removeCard(currentCard);
   };
 
   const modify = () => {

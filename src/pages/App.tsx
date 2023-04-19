@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
-import { PaymentsContextProvider } from 'context/Payments';
+import { CardContextProvider } from '../context/Card';
 import Routes from 'routes';
 
 function App() {
   return (
     <Layout>
-      <PaymentsContextProvider>
+      <CardContextProvider>
         <GlobalStyle />
         <Routes />
-      </PaymentsContextProvider>
+      </CardContextProvider>
     </Layout>
   );
 }

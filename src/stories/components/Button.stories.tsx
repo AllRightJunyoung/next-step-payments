@@ -1,4 +1,3 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from 'components/UI/Button/Button';
 import ButtonProps from 'components/UI/Button/Button';

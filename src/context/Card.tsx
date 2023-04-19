@@ -1,14 +1,14 @@
 import { createContext, useState } from 'react';
-import { CardType } from 'types';
+import { CardType } from '../types';
 
-type PaymentsContextType = {
+type CardContextType = {
   cardList: CardType[];
   addCard: (card: CardType) => void;
   updateAlias: (card: CardType) => void;
   removeCard: (card: CardType) => void;
 };
 
-export const PaymentsContext = createContext<PaymentsContextType>({
+export const CardContext = createContext<CardContextType>({
   cardList: [],
   addCard: function (card: CardType) {},
   updateAlias: function (card: CardType) {},
@@ -19,7 +19,7 @@ interface ProviderProps {
   children: React.ReactNode;
 }
 
-export const PaymentsContextProvider = ({ children }: ProviderProps) => {
+export const CardContextProvider = ({ children }: ProviderProps) => {
   const [cardList, setCardList] = useState<CardType[]>([]);
 
   // 카드 리스트에 추가
@@ -52,5 +52,5 @@ export const PaymentsContextProvider = ({ children }: ProviderProps) => {
     updateAlias,
     removeCard,
   };
-  return <PaymentsContext.Provider value={context}>{children}</PaymentsContext.Provider>;
+  return <CardContext.Provider value={context}>{children}</CardContext.Provider>;
 };
