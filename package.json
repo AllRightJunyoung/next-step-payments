@@ -2,7 +2,7 @@
   "name": "react-payment-junyoung",
   "version": "0.1.0",
   "private": false,
-  "main":"dist/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
   "dependencies": {
@@ -18,7 +18,6 @@
     "@types/react-dom": "^18.0.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "react-uuid": "^2.0.0",
     "styled-components": "^5.3.6",
@@ -65,9 +64,9 @@
     "chromatic": "^6.17.0",
     "eslint": "^8.34.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -91,13 +90,21 @@
     ]
   },
   "description": "next-step react-payments app",
-  "keywords": ["react","next-step","payment"],
-  "author": {"name": "thegiantKiller"},
+  "keywords": [
+    "react",
+    "next-step",
+    "payment"
+  ],
+  "author": {
+    "name": "thegiantKiller"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/thegiantkiller"
   },
-  "contributors" : ["thegiantkiller"],
+  "contributors": [
+    "thegiantkiller"
+  ],
   "readme": "ERROR: No README data found!",
   "_id": "2weeks@0.1.0"
 }

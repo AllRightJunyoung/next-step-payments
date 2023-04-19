@@ -1,9 +1,9 @@
 import { CardUIType, CardFormInputRefsType } from 'types';
 import { useContext } from 'react';
 import { CardContext } from '../../context/Card';
-import { isCardFormValidation } from 'utils/InputValidation';
+import { isCardFormValidation } from '../../utils/InputValidation';
 import uuid from 'react-uuid';
-import useRouter from 'routes/useRouter';
+import usePage from 'pages/usePage';
 
 interface PropsType {
   cardUI: CardUIType;
@@ -12,11 +12,10 @@ interface PropsType {
 
 const useFormPage = ({ cardUI, formRefs }: PropsType) => {
   const cardCtx = useContext(CardContext);
-
-  const { push } = useRouter();
+  const { setPage, page } = usePage();
 
   const handleBackButton = () => {
-    push('/');
+    setPage('MyCardList');
   };
 
   const submit = () => {
@@ -38,10 +37,11 @@ const useFormPage = ({ cardUI, formRefs }: PropsType) => {
     };
     cardCtx.addCard(newCard);
     localStorage.setItem('id', newCard.id);
-    push('/alias');
+    setPage('Alias');
   };
 
   return {
+    page,
     handleBackButton,
     submit,
   };

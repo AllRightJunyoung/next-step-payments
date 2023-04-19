@@ -1,6 +1,6 @@
 import type { CardNumberInputProps } from './CardNumberInput.types';
 import * as Styled from './CardNumberInput.styles';
-import { FormInput, Text } from 'components/UI';
+import { FormInput, Text } from '../../../UI';
 
 const CardNumberInput = ({ onChange, isValid, fontColor, refs }: CardNumberInputProps) => {
   return (

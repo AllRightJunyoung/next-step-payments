@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
-import { CardContextProvider } from '../context/Card';
-import Routes from 'routes';
+import { CardContextProvider } from './context/Card';
+import { AppContextProvider } from './context/App';
+import PaymentApp from './PaymentApp';
 
 function App() {
   return (
     <Layout>
-      <CardContextProvider>
-        <GlobalStyle />
-        <Routes />
-      </CardContextProvider>
+      <GlobalStyle />
+      <AppContextProvider>
+        <CardContextProvider>
+          <PaymentApp />
+        </CardContextProvider>
+      </AppContextProvider>
     </Layout>
   );
 }

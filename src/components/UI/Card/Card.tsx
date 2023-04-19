@@ -1,7 +1,7 @@
 import type { CardProps } from './Card.types';
 import * as Styled from './Card.styles';
-import { Text, IconButton } from 'components/UI';
-import { useCard } from 'hooks/Domain';
+import { Text, IconButton } from '../../../components/UI';
+import { useCard } from '../../../hooks/Domain';
 
 const Card = ({
   type,
@@ -26,8 +26,8 @@ const Card = ({
             {company && <Text fontSize="s" weight="normal" label={company} />}
             {id && (
               <div>
-                <IconButton onClick={modify} name="modify" size="1x" color="black" />
-                <IconButton onClick={remove} name="remove" size="1x" color="black" />
+                <IconButton onClick={modify} name="modify" size="2x" color="black" />
+                <IconButton onClick={remove} name="remove" size="2x" color="black" />
               </div>
             )}
           </Styled.Top>

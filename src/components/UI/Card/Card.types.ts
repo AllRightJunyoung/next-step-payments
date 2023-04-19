@@ -1,9 +1,9 @@
-import { ColorType, CompanyType } from "types";
-import { ReactEventHandler } from "react";
+import { ColorType, CompanyType } from '../../../types';
+import { ReactEventHandler } from 'react';
 
 export type CardProps = {
-  size: "small" | "big";
-  type: "primary" | "add";
+  size: 'small' | 'big';
+  type: 'primary' | 'add';
   className?: string;
   id?: string;
   number?: string;

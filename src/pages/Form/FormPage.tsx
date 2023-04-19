@@ -6,6 +6,8 @@ import { useCardForm } from '../../hooks/Domain';
 import useFormPage from '../../hooks/pages/useFormPage';
 import { VirtualKeyBoardContextProvider } from '../../context/VirtualKeyBoard';
 import { Text, Button, IconButton, Card } from '../../components/UI';
+import { AliasPage } from '../../pages/Alias';
+import { MyCardListPage } from '../../pages/MyCardList';
 
 const FormPage = () => {
   const { isOpen, setIsOpen } = useUI();

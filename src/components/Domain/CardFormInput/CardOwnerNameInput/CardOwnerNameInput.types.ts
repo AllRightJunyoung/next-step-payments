@@ -1,4 +1,4 @@
-import { ColorType, CardFormInputRefsType } from 'types';
+import { ColorType, CardFormInputRefsType } from '../../../../types';
 
 export type CardOwnerNameInputProps = {
   fontColor: ColorType;

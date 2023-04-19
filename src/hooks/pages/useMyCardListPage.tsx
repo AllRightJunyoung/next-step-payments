@@ -1,13 +1,17 @@
+import usePage from '../../pages/usePage';
 import { CardContext } from '../../context/Card';
 import { useContext } from 'react';
-import useRouter from 'routes/useRouter';
 
 const useMyCardListPage = () => {
-  const { push } = useRouter();
   const cardCtx = useContext(CardContext);
   const myCardList = [...cardCtx.cardList].reverse();
+  const { setPage, page } = usePage();
 
-  return { push, myCardList };
+  const handleCard = () => {
+    setPage('Form');
+  };
+
+  return { myCardList, page, handleCard };
 };
 
 export default useMyCardListPage;

@@ -1,14 +1,15 @@
 import { CardContext } from '../../context/Card';
 import { useRef, useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { changeAliasLength } from '../../utils/InputChange';
+import usePage from '../../pages/usePage';
 const useAliasPage = () => {
-  const navigate = useNavigate();
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputLength, setInputLength] = useState(0);
   const CardCtx = useContext(CardContext);
   const cardList = CardCtx.cardList;
   const currentCard = cardList.find((card) => card.id === localStorage.getItem('id'));
+
+  const { setPage } = usePage();
 
   const handleSubmit = () => {
     if (inputRef.current === null || !currentCard) return;
@@ -19,7 +20,7 @@ const useAliasPage = () => {
       alias: aliasName,
     };
     CardCtx.updateAlias(aliasCard);
-    navigate('/');
+    setPage('MyCardList');
   };
 
   const handleInput = () => {

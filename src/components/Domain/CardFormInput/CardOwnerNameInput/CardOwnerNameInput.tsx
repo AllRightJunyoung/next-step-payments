@@ -1,6 +1,6 @@
 import type { CardOwnerNameInputProps } from './CardOwnerNameInput.types';
 import * as Styled from './CardOwnerNameInput.styles';
-import { FormInput, Text } from 'components/UI';
+import { FormInput, Text } from '../../../UI';
 
 const CardOwnerNameInput = ({ onChange, fontColor, refs, length, isValid }: CardOwnerNameInputProps) => {
   return (

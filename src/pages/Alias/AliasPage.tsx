@@ -1,7 +1,7 @@
 import * as Styled from './AliasPage.styles';
-import useAliasPage from 'hooks/pages/useAliasPage';
-import { getCardCompnayColor } from 'utils/Card';
-import { Card, Text, Button, FormInput } from 'components/UI';
+import useAliasPage from '../../hooks/pages/useAliasPage';
+import { getCardCompnayColor } from '../../utils/Card';
+import { Card, Text, Button, FormInput } from '../../components/UI';
 
 const AliasPage = () => {
   const { handleSubmit, handleInput, currentCard, inputRef, inputLength } = useAliasPage();

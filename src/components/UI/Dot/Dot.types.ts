@@ -1,4 +1,4 @@
-import { ColorType, CompanyType } from 'types';
+import { ColorType, CompanyType } from '../../../types';
 
 export type CircleProps = {
   color: ColorType;

@@ -1,4 +1,4 @@
-import { VirtualKeyBoard } from 'components/Domain';
+import { VirtualKeyBoard } from '../../../components/Domain';
 import {
   CardNumberInput,
   CardExpirationDateInput,
@@ -8,8 +8,8 @@ import {
 } from '../CardFormInput';
 
 import type { CardFormProps } from './CardForm.types';
-import { isValidFormUI } from 'utils/InputValidation';
-import { getCardCompnayColor } from 'utils/Card';
+import { isValidFormUI } from '../../../utils/InputValidation';
+import { getCardCompnayColor } from '../../../utils/Card';
 
 const CardForm = ({
   cardUI,

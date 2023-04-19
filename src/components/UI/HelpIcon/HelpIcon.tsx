@@ -1,6 +1,6 @@
 import * as Styled from './HelpIcon.styles';
-import { IconButton } from 'components/UI';
-import { useUI } from 'hooks/common';
+import { IconButton } from '../../UI';
+import { useUI } from '../../../hooks/common';
 import type { HelpProps } from './HelpIcon.types';
 
 const HelpIcon = ({ children, ...attribute }: HelpProps) => {

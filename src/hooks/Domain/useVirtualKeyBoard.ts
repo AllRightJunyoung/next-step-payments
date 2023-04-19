@@ -1,6 +1,6 @@
-import { VirtualKeyBoardContext } from 'context/VirtualKeyBoard';
+import { VirtualKeyBoardContext } from '../../context/VirtualKeyBoard';
 import { useContext, useRef } from 'react';
-import { isValidPasswordNumber, isValidSecurityCode } from 'utils/InputValidation';
+import { isValidPasswordNumber, isValidSecurityCode } from '../../utils/InputValidation';
 import type { CardFormInputRefsType } from 'types';
 type ModeType = 'cvc' | 'password';
 

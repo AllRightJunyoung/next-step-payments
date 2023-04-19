@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import * as Styled from './CompanyListModal.styles';
 import type { CompanyListModalProps } from './CompanyListModal.types';
-import { Dot } from 'components/UI';
-import { useOutsideClick } from 'hooks/common';
+import { Dot } from '../../UI';
+import { useOutsideClick } from '../../../hooks/common';
 
 const CompanyListModal = ({ onSelectCompanyList, onClose }: CompanyListModalProps) => {
   const ref = useRef<HTMLDivElement>(null);

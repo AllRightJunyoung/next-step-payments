@@ -1,4 +1,4 @@
-import { FontSizeType, FontWeightType, ColorType } from "types";
+import { FontSizeType, FontWeightType, ColorType } from '../../../types';
 
 export type TextProps = {
   fontSize: FontSizeType;

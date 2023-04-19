@@ -1,6 +1,6 @@
 import { CardExpirationDateInputProps } from './CardExpirationDateInput.types';
 import * as Styled from './CardExpirationDateInput.styles';
-import { FormInput, Text } from 'components/UI';
+import { FormInput, Text } from '../../../UI';
 
 const CardExpirationDateInput = ({
   onChangeMonth,

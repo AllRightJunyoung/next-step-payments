@@ -1,7 +1,7 @@
 import * as Styled from './KeyBoardIconButton.styles';
 import type { KeyBoardIconButtonProps } from './KeyBoardIconButton.types';
-import { useUI } from 'hooks/common';
-import { IconButton } from 'components/UI';
+import { useUI } from '../../../hooks/common';
+import { IconButton } from '../../../components/UI';
 
 const KeyBoardIconButton = ({ onClick }: KeyBoardIconButtonProps) => {
   const { isOpen, setIsOpen } = useUI();

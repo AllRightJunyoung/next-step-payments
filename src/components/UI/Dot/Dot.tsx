@@ -1,6 +1,6 @@
 import type { DotProps } from './Dot.types';
 import * as Styled from './Dot.styles';
-import { Text } from 'components/UI';
+import { Text } from '../../UI';
 
 const Dot = ({ className, color, value, onClick }: DotProps) => {
   return (

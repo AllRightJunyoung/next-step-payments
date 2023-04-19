@@ -1,8 +1,8 @@
-import { CardFormInputRefsType, CardUIType, CompanyType } from 'types';
+import { CardFormInputRefsType, CardUIType, CompanyType } from '../../types';
 import { useRef, useState } from 'react';
-import { changeCardNumber, changeMonth, changeOwnerName, changeYear } from 'utils/InputChange';
-import { isValidCardNumber, isValidExpirationMonth, isValidExpirationYear } from 'utils/InputValidation';
-import { getCardNumberCompnay } from 'utils/Card';
+import { changeCardNumber, changeMonth, changeOwnerName, changeYear } from '../../utils/InputChange';
+import { isValidCardNumber, isValidExpirationMonth, isValidExpirationYear } from '../../utils/InputValidation';
+import { getCardNumberCompnay } from '../../utils/Card';
 
 const initialCardCardUI: CardUIType = {
   cardNumbers: '',

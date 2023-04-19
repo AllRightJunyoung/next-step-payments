@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Text } from 'components/UI';
+import { Text } from '../../../UI';
 
 export const Layout = styled.div`
   margin-top: 20px;

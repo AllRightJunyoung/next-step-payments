@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FormInput } from 'components/UI/';
+import { FormInput } from '../../UI/';
 
 export const Layout = styled.div`
   width: 100%;

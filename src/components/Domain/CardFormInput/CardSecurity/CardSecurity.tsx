@@ -1,7 +1,7 @@
 import type { CardSecurityProps } from './CardSecurity.types';
 import * as Styled from './CardSecurity.styles';
-import { KeyBoardIconButton, HelpIcon } from 'components/UI';
-import { useVirtualKeyBoard } from 'hooks/Domain';
+import { KeyBoardIconButton, HelpIcon } from '../../../UI';
+import { useVirtualKeyBoard } from '../../../../hooks/Domain';
 
 const CardSecurity = ({ fontColor, refs }: CardSecurityProps) => {
   const { showUI } = useVirtualKeyBoard(refs);

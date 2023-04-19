@@ -2,7 +2,7 @@ import * as Styled from './VirtualKeyBoard.styles';
 
 import type { VirtualKeyBoardProps } from './VirtualKeyBoard.types';
 import { initialVirtualKeyBoard } from './utils';
-import { useVirtualKeyBoard } from 'hooks/Domain';
+import { useVirtualKeyBoard } from '../../../hooks/Domain';
 
 const VirtualKeyBoard = ({ refs }: VirtualKeyBoardProps) => {
   const { passwordRef, clearInput, deleteInput, isOpen, mode, handleKeyBoard } = useVirtualKeyBoard(refs);

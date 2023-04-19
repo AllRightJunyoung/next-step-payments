@@ -1,18 +1,18 @@
 import { CardType } from 'types';
 import { getCardCompnayColor } from 'utils/Card';
 import * as Styled from './MyCardListPage.styles';
-import useMyCardListPage from 'hooks/pages/useMyCardListPage';
+import useMyCardListPage from '../../hooks/pages/useMyCardListPage';
 
-import { Card, Text } from 'components/UI';
+import { Card, Text } from '../../components/UI';
 
 const MyCardListPage = () => {
-  const { myCardList, push } = useMyCardListPage();
+  const { myCardList, handleCard } = useMyCardListPage();
 
   return (
     <Styled.Layout>
       <Styled.Title fontSize="xl" weight="bold" label="보유카드" />
       <Styled.ScrollContainer>
-        <Styled.AddCard type="add" size="small" onClick={() => push('/form')} />
+        <Styled.AddCard type="add" size="small" onClick={handleCard} />
         {myCardList.map((card: CardType) => (
           <Styled.CardLayout key={card.id}>
             <Card

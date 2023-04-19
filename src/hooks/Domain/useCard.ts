@@ -1,13 +1,14 @@
 import { useContext } from 'react';
 import { CardType } from '../../types';
-import { useNavigate } from 'react-router-dom';
 import { CardContext } from '../../context/Card';
+import usePage from 'pages/usePage';
 
 const useCard = (id: string | undefined) => {
   const CardCtx = useContext(CardContext);
   const myCardList = CardCtx.cardList;
   const currentCard = myCardList.find((card: CardType) => card.id === id);
-  const navigate = useNavigate();
+
+  const { setPage } = usePage();
 
   const remove = () => {
     if (!currentCard) return;
@@ -17,7 +18,7 @@ const useCard = (id: string | undefined) => {
   const modify = () => {
     if (!currentCard) return;
     localStorage.setItem('id', currentCard.id);
-    navigate('/alias');
+    setPage('Alias');
   };
 
   return { remove, modify };
