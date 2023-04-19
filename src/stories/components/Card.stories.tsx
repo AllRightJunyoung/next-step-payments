@@ -1,13 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Card } from 'components/UI';
-
-import { withRouter } from 'storybook-addon-react-router-v6';
+import { Card } from '../../components/UI';
 
 export default {
   title: 'Card',
   component: Card,
-  decorators: [withRouter],
 } as ComponentMeta<typeof Card>;
 
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;

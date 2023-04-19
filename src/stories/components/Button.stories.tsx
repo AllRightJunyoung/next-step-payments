@@ -1,12 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from 'components/UI/Button/Button';
 import ButtonProps from 'components/UI/Button/Button';
-import { withRouter } from 'storybook-addon-react-router-v6';
 
 export default {
   title: 'Button',
   component: Button,
-  decorators: [withRouter],
 } as ComponentMeta<typeof ButtonProps>;
 
 const Template: ComponentStory<typeof ButtonProps> = (args) => <Button {...args} />;
