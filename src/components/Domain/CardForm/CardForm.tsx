@@ -10,6 +10,8 @@ import {
 import type { CardFormProps } from './CardForm.types';
 import { isValidFormUI } from '../../../utils/InputValidation';
 import { getCardCompnayColor } from '../../../utils/Card';
+import { useUI } from '../../../hooks/common';
+import useVirtualKeyBoard from '../../../hooks/Domain/useVirtualKeyBoard';
 
 const CardForm = ({
   cardUI,
@@ -20,6 +22,9 @@ const CardForm = ({
   onOwnerNameInput,
 }: CardFormProps) => {
   const cardColor = getCardCompnayColor(cardUI.company);
+  const { isOpen, setIsOpen } = useUI();
+  const { passwordRef, clearInput, deleteInput, handleKeyBoard, ui, setUI } = useVirtualKeyBoard(refs, setIsOpen);
+
   return (
     <div>
       <CardNumberInput
@@ -43,9 +48,16 @@ const CardForm = ({
         length={cardUI.ownerName.length}
         isValid={isValidFormUI(cardUI.ownerName, 'ownerName')}
       />
-      <VirtualKeyBoard refs={refs} />
-      <CardSecurity fontColor={cardColor} refs={refs} />
-      <CardPasswordInput fontColor={cardColor} refs={refs} />
+      <VirtualKeyBoard
+        isOpen={isOpen}
+        ui={ui}
+        handleKeyBoard={handleKeyBoard}
+        clearInput={clearInput}
+        deleteInput={deleteInput}
+        passwordRef={passwordRef}
+      />
+      <CardSecurity fontColor={cardColor} refs={refs} setVirtualKeyBoardUI={setUI} />
+      <CardPasswordInput fontColor={cardColor} refs={refs} setVirtualKeyBoardUI={setUI} />
     </div>
   );
 };

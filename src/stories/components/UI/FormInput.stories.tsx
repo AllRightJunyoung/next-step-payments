@@ -1,10 +1,8 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { FormInput } from 'components/UI';
+import { FormInput } from '../../../components/UI';
 
 export default {
-  title: 'Input',
+  title: 'UI/FormInput',
   component: FormInput,
 } as ComponentMeta<typeof FormInput>;
 

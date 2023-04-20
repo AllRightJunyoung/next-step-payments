@@ -1,33 +1,33 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Text } from 'components/UI';
+import Button from '../../../components/UI/Button/Button';
 
 export default {
-  title: 'Text',
-  component: Text,
-} as ComponentMeta<typeof Text>;
+  title: 'UI/Button',
+  component: Button,
+} as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const XSmall = Template.bind({});
 XSmall.args = {
   fontSize: 'xs',
-  label: 'xsmall',
+  label: 'Next',
 };
-export const Small = Template.bind({});
 
+export const Small = Template.bind({});
 Small.args = {
   fontSize: 's',
-  label: 'small',
+  label: 'Next',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
   fontSize: 'm',
-  label: 'medium',
+  label: 'Next',
 };
+
 export const Large = Template.bind({});
 Large.args = {
   fontSize: 'lg',
-  label: 'large',
+  label: 'Next',
 };

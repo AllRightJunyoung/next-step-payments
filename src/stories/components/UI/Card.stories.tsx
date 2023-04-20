@@ -1,9 +1,7 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Card } from '../../components/UI';
-
+import { Card } from '../../../components/UI';
 export default {
-  title: 'Card',
+  title: 'UI/Card',
   component: Card,
 } as ComponentMeta<typeof Card>;
 

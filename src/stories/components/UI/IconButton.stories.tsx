@@ -1,8 +1,8 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { IconButton } from 'components/UI';
+import { IconButton } from '../../../components/UI';
+
 export default {
-  title: 'IconButton',
+  title: 'UI/IconButton',
   component: IconButton,
 } as ComponentMeta<typeof IconButton>;
 

@@ -1,14 +1,14 @@
-import { VirtualKeyBoardContext } from '../../context/VirtualKeyBoard';
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { isValidPasswordNumber, isValidSecurityCode } from '../../utils/InputValidation';
 import type { CardFormInputRefsType } from 'types';
-type ModeType = 'cvc' | 'password';
+export type VirtualKeyBoardUIType = 'cvc' | 'password';
 
-const useVirtualKeyBoard = (formInputRef: CardFormInputRefsType) => {
+const useVirtualKeyBoard = (
+  formInputRef: CardFormInputRefsType,
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+) => {
   const passwordRef = useRef<HTMLInputElement>(null);
-  const ctx = useContext(VirtualKeyBoardContext);
-  const isOpen = ctx.isOpen;
-  const mode = ctx.mode;
+  const [ui, setUIState] = useState<VirtualKeyBoardUIType>('cvc');
 
   const handleKeyBoard = (e: React.MouseEvent) => {
     if (!passwordRef.current) return;
@@ -16,15 +16,16 @@ const useVirtualKeyBoard = (formInputRef: CardFormInputRefsType) => {
     const currentValue = passwordRef.current.value;
     const nextValue = currentValue + target.value;
     passwordRef.current.value = nextValue;
-
-    if (mode === 'cvc' && isValidSecurityCode(nextValue)) {
+    if (ui === 'cvc' && isValidSecurityCode(nextValue)) {
       if (!formInputRef.cvc) return;
+
       formInputRef.cvc.value = nextValue;
-      ctx.hide();
-    } else if (mode === 'password' && isValidPasswordNumber(nextValue)) {
+
+      setIsOpen(false);
+    } else if (ui === 'password' && isValidPasswordNumber(nextValue)) {
       if (!formInputRef.password) return;
       formInputRef.password.value = nextValue;
-      ctx.hide();
+      setIsOpen(false);
     }
   };
   const deleteInput = () => {
@@ -38,12 +39,12 @@ const useVirtualKeyBoard = (formInputRef: CardFormInputRefsType) => {
     passwordRef.current.value = '';
   };
 
-  const showUI = (type: ModeType) => {
-    ctx.setUI(type);
-    ctx.show();
+  const setUI = (type: VirtualKeyBoardUIType) => {
+    setUIState(type);
+    setIsOpen(true);
   };
 
-  return { passwordRef, clearInput, deleteInput, showUI, isOpen, mode, handleKeyBoard };
+  return { passwordRef, clearInput, deleteInput, setUI, handleKeyBoard, ui };
 };
 
 export default useVirtualKeyBoard;
