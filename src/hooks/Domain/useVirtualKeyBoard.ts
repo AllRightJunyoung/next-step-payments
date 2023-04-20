@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { isValidPasswordNumber, isValidSecurityCode } from '../../utils/InputValidation';
-import type { CardFormInputRefsType } from 'types';
+import type { CardFormInputRefsType } from '../../types';
 export type VirtualKeyBoardUIType = 'cvc' | 'password';
 
 const useVirtualKeyBoard = (

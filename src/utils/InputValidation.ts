@@ -1,5 +1,5 @@
-import type { CardValidationType } from 'types';
-import { reportError, ValidationError } from 'utils/error';
+import type { CardValidationType } from '../types';
+import { reportError, ValidationError } from '../utils/error';
 export const isCardFormValidation = (form: CardValidationType) => {
   const isValid =
     isValidCardNumber(form.cardNumbers) &&

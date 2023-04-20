@@ -1,4 +1,4 @@
-import { ColorType, CompanyType } from 'types';
+import { ColorType, CompanyType } from '../types';
 type ColorTable = {
   [key: string]: ColorType;
 };

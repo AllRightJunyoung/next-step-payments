@@ -1,2 +1,12 @@
 src/
 public/
+node_modules/
+.git
+.gitignore
+.eslintrc
+.eslintignore
+chromatic.yml
+tsconfig.json
+.storybook/
+.prettierrc
+build-storybook

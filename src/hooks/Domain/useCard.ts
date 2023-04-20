@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { CardType } from '../../types';
 import { CardContext } from '../../context/Card';
-import usePage from 'pages/usePage';
+import usePage from '../../pages/usePage';
 
 const useCard = (id: string | undefined) => {
   const CardCtx = useContext(CardContext);

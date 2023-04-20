@@ -1,4 +1,4 @@
-import { AliasPage } from 'pages/Alias';
+import { AliasPage } from './pages/Alias';
 import { FormPage } from './pages/Form';
 import { MyCardListPage } from './pages/MyCardList';
 import usePage from './pages/usePage';

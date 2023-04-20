@@ -1,9 +1,9 @@
-import { CardUIType, CardFormInputRefsType } from 'types';
+import { CardUIType, CardFormInputRefsType } from '../../types';
 import { useContext } from 'react';
 import { CardContext } from '../../context/Card';
 import { isCardFormValidation } from '../../utils/InputValidation';
 import uuid from 'react-uuid';
-import usePage from 'pages/usePage';
+import usePage from '../../pages/usePage';
 
 interface PropsType {
   cardUI: CardUIType;

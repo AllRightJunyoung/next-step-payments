@@ -1,5 +1,5 @@
-import { CardType } from 'types';
-import { getCardCompnayColor } from 'utils/Card';
+import { CardType } from '../../types';
+import { getCardCompnayColor } from '../../utils/Card';
 import * as Styled from './MyCardListPage.styles';
 import useMyCardListPage from '../../hooks/pages/useMyCardListPage';
 
