@@ -22,3 +22,10 @@ underline.args = {
   placeholder: 'underline',
   active: true,
 };
+
+export const errorInput = Template.bind({});
+errorInput.args = {
+  theme: 'primary',
+  active: true,
+  error: true,
+};
