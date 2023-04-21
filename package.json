@@ -3,8 +3,14 @@
   "version": "0.0.2",
   "private": false,
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
+  "exports": {
+    ".": {
+      "import": "dist/index.ts"
+    }
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",

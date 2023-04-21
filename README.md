@@ -5,7 +5,7 @@
 </p>
 
 
-# :computer: DEMO
+## :computer: DEMO
 
 https://user-images.githubusercontent.com/100929485/233313677-ca8fad00-bded-4492-9d81-21d3daba5f1a.mov
 
@@ -13,7 +13,7 @@ https://user-images.githubusercontent.com/100929485/233313677-ca8fad00-bded-4492
 
 
 
-# ⚙️  기능 
+## ⚙️  기능 
 - 가상 키보드 
 - Form 유효성 검사
 - Layout 수정가능 (CSS)
@@ -37,3 +37,7 @@ function App(){
 }
 
 ~~~
+
+## :books: 스토리북 (미완성)
+
+
