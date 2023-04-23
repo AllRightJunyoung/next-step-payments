@@ -3,7 +3,7 @@ import { CardType } from '../../types';
 import { CardContext } from '../../context/Card';
 import usePage from '../../pages/usePage';
 
-const useCard = (id: string | undefined) => {
+const usePrimaryCard = (id: string | undefined) => {
   const CardCtx = useContext(CardContext);
   const myCardList = CardCtx.cardList;
   const currentCard = myCardList.find((card: CardType) => card.id === id);
@@ -24,4 +24,4 @@ const useCard = (id: string | undefined) => {
   return { remove, modify };
 };
 
-export default useCard;
+export default usePrimaryCard;

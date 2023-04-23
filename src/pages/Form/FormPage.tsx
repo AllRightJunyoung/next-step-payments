@@ -4,7 +4,7 @@ import { getCardCompnayColor } from '../../utils/Card';
 import { useUI } from '../../hooks/common';
 import { useCardForm } from '../../hooks/Domain';
 import useFormPage from '../../hooks/pages/useFormPage';
-import { Text, Button, IconButton, Card } from '../../components/UI';
+import { Text, Button, IconButton, PrimaryCard } from '../../components/UI';
 
 const FormPage = () => {
   const { isOpen, setIsOpen } = useUI();
@@ -32,8 +32,7 @@ const FormPage = () => {
       </Styled.Header>
       <div>
         {isOpen && <CompanyListModal onSelectCompanyList={handleCompanyList} onClose={setIsOpen} />}
-        <Card
-          type="primary"
+        <PrimaryCard
           onClick={() => setIsOpen(true)}
           color={getCardCompnayColor(cardUI.company)}
           company={cardUI.company}

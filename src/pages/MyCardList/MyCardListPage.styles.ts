@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Card, Text } from '../../components/UI';
+import { Text } from '../../components/UI';
 
 export const Layout = styled.div`
   display: flex;
@@ -24,9 +24,7 @@ export const ScrollContainer = styled.div`
   scrollbar-width: thin;
   scrollbar-color: #636266;
 `;
-export const AddCard = styled(Card)`
-  margin-bottom: 30px;
-`;
+
 export const Title = styled(Text)`
   margin: 20px;
   display: block;

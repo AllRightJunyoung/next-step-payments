@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
-import type { ContainerProps } from './Card.types';
+import { ContainerProps } from './AddCard.types';
 
 export const Layout = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 `;
 
 export const Container = styled.div<ContainerProps>`
@@ -63,44 +64,4 @@ export const Container = styled.div<ContainerProps>`
           width: 290px;
           height: 180px;
         `}
-`;
-
-export const Top = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-`;
-export const Middle = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  margin-left: ${(props) => (props.theme !== 'add' ? '30px' : '0px')};
-`;
-export const Bottom = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-`;
-
-export const InfoContainer = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  justify-content: space-between;
-`;
-
-export const Chip = styled.div`
-  width: 40px;
-  height: 26px;
-  left: 95px;
-  top: 122px;
-  background-color: #cbba64;
-  border-radius: 4px;
 `;

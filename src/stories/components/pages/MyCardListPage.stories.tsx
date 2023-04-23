@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MyCardListPage } from '../../../pages/MyCardList';
 export default {

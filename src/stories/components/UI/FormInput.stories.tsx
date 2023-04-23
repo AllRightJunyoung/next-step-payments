@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { FormInput } from '../../../components/UI';
 

@@ -3,7 +3,7 @@ import { getCardCompnayColor } from '../../utils/Card';
 import * as Styled from './MyCardListPage.styles';
 import useMyCardListPage from '../../hooks/pages/useMyCardListPage';
 
-import { Card, Text } from '../../components/UI';
+import { PrimaryCard, Text, AddCard } from '../../components/UI';
 
 const MyCardListPage = () => {
   const { myCardList, handleCard } = useMyCardListPage();
@@ -12,11 +12,10 @@ const MyCardListPage = () => {
     <Styled.Layout>
       <Styled.Title fontSize="xl" weight="bold" label="보유카드" />
       <Styled.ScrollContainer>
-        <Styled.AddCard type="add" size="small" onClick={handleCard} />
+        <AddCard size="small" onClick={handleCard} />
         {myCardList.map((card: CardType) => (
           <Styled.CardLayout key={card.id}>
-            <Card
-              type="primary"
+            <PrimaryCard
               id={card.id}
               color={getCardCompnayColor(card.company)}
               company={card.company}

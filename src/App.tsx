@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import GlobalStyle from 'styles/GlobalStyle';
+import GlobalStyle from './styles/GlobalStyle';
 import { CardContextProvider } from './context/Card';
 import { AppContextProvider } from './context/App';
 import PaymentApp from './PaymentApp';

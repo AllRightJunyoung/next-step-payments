@@ -19,5 +19,5 @@
     "noEmit": false,
     "declaration": true,
   },
-  "include": ["src", "public", "index.tsx", "src/index.ts"]
+  "include": ["src", "public", "index.tsx"]
 }

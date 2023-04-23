@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable import/named */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CompanyListModal } from '../../../components/Domain';
 export default {
