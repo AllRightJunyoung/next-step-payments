@@ -1,9 +1,10 @@
 import { CardUIType, CardFormInputRefsType, CardType } from '../../types';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { CardContext } from '../../context/Card';
 import { isCardFormValidation } from '../../utils/InputValidation';
 import uuid from 'react-uuid';
 import usePage from '../../pages/usePage';
+import { AppContext } from '../../context/App';
 
 interface PropsType {
   cardUI: CardUIType;
@@ -12,7 +13,12 @@ interface PropsType {
 
 const useFormPage = ({ cardUI, formRefs }: PropsType) => {
   const cardCtx = useContext(CardContext);
+  const appCtx = useContext(AppContext);
   const { setPage, page } = usePage();
+
+  useEffect(() => {
+    appCtx.setPayment(false);
+  }, []);
 
   const handleBackButton = () => {
     setPage('MyCardList');

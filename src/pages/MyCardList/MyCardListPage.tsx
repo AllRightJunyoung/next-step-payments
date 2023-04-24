@@ -1,9 +1,9 @@
+import * as Styled from './MyCardListPage.styles';
+import { PrimaryCard, Text, AddCard } from '../../components/UI';
+
 import { CardType } from '../../types';
 import { getCardCompnayColor } from '../../utils/Card';
-import * as Styled from './MyCardListPage.styles';
 import useMyCardListPage from '../../hooks/pages/useMyCardListPage';
-
-import { PrimaryCard, Text, AddCard } from '../../components/UI';
 
 const MyCardListPage = () => {
   const { myCardList, handleCard } = useMyCardListPage();

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { CardContext } from '../../context/Card';
 import { AppContext } from '../../context/App';
 
@@ -12,6 +12,10 @@ const usePaymentPage = (refs: CardFormInputRefsType) => {
   const cardCtx = useContext(CardContext);
   const appCtx = useContext(AppContext);
   const myCard = cardCtx.selectedCard;
+
+  useEffect(() => {
+    appCtx.setPayment(false);
+  }, []);
 
   const home = () => {
     setPage('MyCardList');
