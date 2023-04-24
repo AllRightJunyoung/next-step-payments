@@ -1,9 +1,9 @@
-import * as Styled from './KeyBoardIconButton.styles';
-import type { KeyBoardIconButtonProps } from './KeyBoardIconButton.types';
+import * as Styled from './KeyBoardIconTooltip.styles';
+import type { KeyBoardIconTooltipProps } from './KeyBoardIconTooltip.types';
 import { useUI } from '../../../hooks/common';
-import { IconButton } from '../../../components/UI';
+import { IconButton } from '..';
 
-const KeyBoardIconButton = ({ onClick }: KeyBoardIconButtonProps) => {
+const KeyBoardIconTooltip = ({ onClick }: KeyBoardIconTooltipProps) => {
   const { isOpen, setIsOpen } = useUI();
 
   return (
@@ -21,4 +21,4 @@ const KeyBoardIconButton = ({ onClick }: KeyBoardIconButtonProps) => {
   );
 };
 
-export default KeyBoardIconButton;
+export default KeyBoardIconTooltip;

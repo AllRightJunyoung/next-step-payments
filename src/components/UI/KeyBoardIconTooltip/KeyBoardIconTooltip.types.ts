@@ -1,4 +1,4 @@
 import { ReactEventHandler } from 'react';
-export type KeyBoardIconButtonProps = {
+export type KeyBoardIconTooltipProps = {
   onClick?: ReactEventHandler<HTMLButtonElement>;
 };

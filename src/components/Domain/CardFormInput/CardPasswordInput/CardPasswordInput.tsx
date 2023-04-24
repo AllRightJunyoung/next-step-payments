@@ -1,6 +1,6 @@
 import type { CardPasswordInputProps } from './CardPasswordInput.types';
 import * as Styled from './CardPasswordInput.styles';
-import { KeyBoardIconButton } from '../../../UI';
+import { KeyBoardIconTooltip } from '../../../UI';
 const CardPasswordInput = ({ refs, fontColor, setVirtualKeyBoardUI }: CardPasswordInputProps) => {
   return (
     <Styled.Layout>
@@ -17,7 +17,7 @@ const CardPasswordInput = ({ refs, fontColor, setVirtualKeyBoardUI }: CardPasswo
         />
         <Styled.IconBox>
           <Styled.CardPassWordHelpIcon>비밀번호 4자리</Styled.CardPassWordHelpIcon>
-          <KeyBoardIconButton onClick={() => setVirtualKeyBoardUI('password')} />
+          <KeyBoardIconTooltip onClick={() => setVirtualKeyBoardUI('password')} />
         </Styled.IconBox>
       </Styled.Box>
     </Styled.Layout>

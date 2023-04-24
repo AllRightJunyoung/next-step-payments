@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Text, FormInput, HelpIcon } from '../../../UI';
+import { Text, FormInput, HelpIconTooltip } from '../../../UI';
 
 export const Layout = styled.div`
   margin-top: 20px;
@@ -26,7 +26,7 @@ export const IconBox = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const CardPassWordHelpIcon = styled(HelpIcon)`
+export const CardPassWordHelpIcon = styled(HelpIconTooltip)`
   width: 126px;
   height: fit-content;
 `;

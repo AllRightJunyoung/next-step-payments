@@ -1,6 +1,6 @@
 import type { CardSecurityProps } from './CardSecurity.types';
 import * as Styled from './CardSecurity.styles';
-import { KeyBoardIconButton, HelpIcon } from '../../../UI';
+import { KeyBoardIconTooltip, HelpIconTooltip } from '../../../UI';
 
 const CardSecurity = ({ fontColor, refs, setVirtualKeyBoardUI }: CardSecurityProps) => {
   return (
@@ -16,8 +16,8 @@ const CardSecurity = ({ fontColor, refs, setVirtualKeyBoardUI }: CardSecurityPro
             active={true}
             disabled={true}
           />
-          <HelpIcon>카드 뒤 3자리</HelpIcon>
-          <KeyBoardIconButton onClick={() => setVirtualKeyBoardUI('cvc')} />
+          <HelpIconTooltip>카드 뒤 3자리</HelpIconTooltip>
+          <KeyBoardIconTooltip onClick={() => setVirtualKeyBoardUI('cvc')} />
         </Styled.Box>
       </Styled.Container>
     </Styled.Layout>

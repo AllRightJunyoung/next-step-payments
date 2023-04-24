@@ -1,9 +1,9 @@
-import * as Styled from './HelpIcon.styles';
-import { IconButton } from '../../UI';
+import * as Styled from './HelpIconTooltip.styles';
+import { IconButton } from '..';
 import { useUI } from '../../../hooks/common';
-import type { HelpProps } from './HelpIcon.types';
+import type { HelpProps } from './HelpIconTooltiptypes';
 
-const HelpIcon = ({ children, ...attribute }: HelpProps) => {
+const HelpIconTooltip = ({ children, ...attribute }: HelpProps) => {
   const { isOpen, setIsOpen } = useUI();
 
   return (
@@ -19,4 +19,4 @@ const HelpIcon = ({ children, ...attribute }: HelpProps) => {
     </Styled.Layout>
   );
 };
-export default HelpIcon;
+export default HelpIconTooltip;
