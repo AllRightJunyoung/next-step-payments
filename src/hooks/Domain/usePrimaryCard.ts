@@ -23,11 +23,7 @@ const usePrimaryCard = () => {
     setPage('Payment');
   };
 
-  const getCard = () => {
-    return myCard;
-  };
-
-  return { remove, modify, payment, getCard };
+  return { remove, modify, payment, myCard };
 };
 
 export default usePrimaryCard;

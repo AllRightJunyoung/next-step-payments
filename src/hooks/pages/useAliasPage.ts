@@ -8,9 +8,7 @@ const useAliasPage = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputLength, setInputLength] = useState(0);
   const cardCtx = useContext(CardContext);
-  const { getCard } = usePrimaryCard();
-  const myCard = getCard();
-
+  const { myCard } = usePrimaryCard();
   const { setPage } = usePage();
 
   const handleSubmit = () => {

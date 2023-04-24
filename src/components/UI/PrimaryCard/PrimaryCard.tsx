@@ -22,7 +22,7 @@ const PrimaryCard = ({
       <Styled.Container color={color} size={size}>
         <Styled.Top>
           {company && <Text fontSize="s" weight="normal" label={company} />}
-          {id !== '' && (
+          {id && (
             <div>
               <IconButton onClick={payment} name="creditCard" size="1x" color="black" />
               <IconButton onClick={modify} name="modify" size="1x" color="black" />

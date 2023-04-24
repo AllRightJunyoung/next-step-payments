@@ -1,21 +1,21 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { isValidPasswordNumber, isValidSecurityCode } from '../../utils/InputValidation';
-import type { CardFormInputRefsType } from '../../types';
+import type { VirtualKeyBoardRefsType } from '../../types';
 export type VirtualKeyBoardUIType = 'cvc' | 'password';
 
 const useVirtualKeyBoard = (
-  formInputRef: CardFormInputRefsType,
+  formInputRef: VirtualKeyBoardRefsType,
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
-  const passwordRef = useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement>(null);
   const [ui, setUIState] = useState<VirtualKeyBoardUIType>('cvc');
 
   const handleKeyBoard = (e: React.MouseEvent) => {
-    if (!passwordRef.current) return;
+    if (!ref.current) return;
     const target = e.target as HTMLInputElement;
-    const currentValue = passwordRef.current.value;
+    const currentValue = ref.current.value;
     const nextValue = currentValue + target.value;
-    passwordRef.current.value = nextValue;
+    ref.current.value = nextValue;
     if (ui === 'cvc' && isValidSecurityCode(nextValue)) {
       if (!formInputRef.cvc) return;
 
@@ -29,14 +29,14 @@ const useVirtualKeyBoard = (
     }
   };
   const deleteInput = () => {
-    if (!passwordRef.current) return;
-    const currentPassword = passwordRef.current.value;
+    if (!ref.current) return;
+    const currentPassword = ref.current.value;
     const nextPassword = currentPassword.slice(0, currentPassword.length - 1);
-    passwordRef.current.value = nextPassword;
+    ref.current.value = nextPassword;
   };
   const clearInput = () => {
-    if (!passwordRef.current) return;
-    passwordRef.current.value = '';
+    if (!ref.current) return;
+    ref.current.value = '';
   };
 
   const setUI = (type: VirtualKeyBoardUIType) => {
@@ -44,7 +44,7 @@ const useVirtualKeyBoard = (
     setIsOpen(true);
   };
 
-  return { passwordRef, clearInput, deleteInput, setUI, handleKeyBoard, ui };
+  return { ref, clearInput, deleteInput, setUI, handleKeyBoard, ui };
 };
 
 export default useVirtualKeyBoard;

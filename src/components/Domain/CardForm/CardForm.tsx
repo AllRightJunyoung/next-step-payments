@@ -23,7 +23,7 @@ const CardForm = ({
 }: CardFormProps) => {
   const cardColor = getCardCompnayColor(cardUI.company);
   const { isOpen, setIsOpen } = useUI();
-  const { passwordRef, clearInput, deleteInput, handleKeyBoard, ui, setUI } = useVirtualKeyBoard(refs, setIsOpen);
+  const { ref, clearInput, deleteInput, handleKeyBoard, ui, setUI } = useVirtualKeyBoard(refs, setIsOpen);
 
   return (
     <div>
@@ -54,7 +54,7 @@ const CardForm = ({
         handleKeyBoard={handleKeyBoard}
         clearInput={clearInput}
         deleteInput={deleteInput}
-        passwordRef={passwordRef}
+        inputRef={ref}
       />
       <CardSecurity fontColor={cardColor} refs={refs} setVirtualKeyBoardUI={setUI} />
       <CardPasswordInput fontColor={cardColor} refs={refs} setVirtualKeyBoardUI={setUI} />

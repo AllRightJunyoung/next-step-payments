@@ -40,6 +40,7 @@ export type CardFormInputRefsType = {
   password: HTMLInputElement | null;
 };
 
+export type VirtualKeyBoardRefsType = Partial<CardFormInputRefsType>;
 export interface CardValidationType {
   cardNumbers: string;
   expireDateMonth: string;
