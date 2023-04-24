@@ -19,6 +19,7 @@ https://user-images.githubusercontent.com/100929485/233313677-ca8fad00-bded-4492
 - Layout 수정가능 (CSS)
 - Form AutoFocusing
 - 카드 번호에 따라 변경되는 Card UI
+- 결제 페이지 (등록된 카드에 맞게 유효성 체크)
 
 ## :zap: 사용방법
 
@@ -38,6 +39,7 @@ function App(){
 
 ~~~
 
-## :books: 스토리북 (미완성)
+## :books: 스토리북
+- https://64465f8bbce72a66f7c2875a-molpqwtvyn.chromatic.com/?path=/story/domain-companylistmodal--default
 
 
