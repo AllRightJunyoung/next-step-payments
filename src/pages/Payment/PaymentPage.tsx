@@ -9,23 +9,23 @@ import { VirtualKeyBoard } from '../../components/Domain';
 
 import useCardForm from '../../hooks/Domain/useCardForm';
 import IconButton from '../../components/UI/IconButton/IconButton';
+import usePaymentPage from '../../hooks/pages/usePaymentPage';
 
 const PaymentPage = () => {
   const { myCard } = usePrimaryCard();
   const { isOpen, setIsOpen } = useUI();
   const { cardFormInputs } = useCardForm();
   const { ref, clearInput, deleteInput, handleKeyBoard, ui, setUI } = useVirtualKeyBoard(cardFormInputs, setIsOpen);
+  const { home, order } = usePaymentPage(cardFormInputs);
 
   return (
     <Styled.Layout>
       <Styled.Header>
-        <IconButton name="arrowLeft" size="2x" color="#575757" />
+        <IconButton name="arrowLeft" size="2x" color="#575757" onClick={home} />
         <Text fontSize="lg" weight="bold" label="결제 하기" />
-        <div></div>
       </Styled.Header>
       <Styled.CardWrapper>
         <PrimaryCard
-          id=""
           size="big"
           color={getCardCompnayColor(myCard.company)}
           company={myCard.company}
@@ -56,7 +56,7 @@ const PaymentPage = () => {
         inputRef={ref}
       />
       <Styled.ButtonWrapper>
-        <Styled.LongButton fontSize="lg" label="결제" />
+        <Styled.LongButton fontSize="lg" label="결제" onClick={order} />
       </Styled.ButtonWrapper>
     </Styled.Layout>
   );

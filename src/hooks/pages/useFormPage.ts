@@ -1,4 +1,4 @@
-import { CardUIType, CardFormInputRefsType } from '../../types';
+import { CardUIType, CardFormInputRefsType, CardType } from '../../types';
 import { useContext } from 'react';
 import { CardContext } from '../../context/Card';
 import { isCardFormValidation } from '../../utils/InputValidation';
@@ -20,19 +20,20 @@ const useFormPage = ({ cardUI, formRefs }: PropsType) => {
 
   const submit = () => {
     if (!formRefs.password || !formRefs.cvc) return;
-    const currentFormCard = cardUI;
     const newCardValidation = { ...cardUI, password: formRefs.password.value, cvc: formRefs.cvc.value };
     if (!isCardFormValidation(newCardValidation)) return;
 
-    const newCard = {
-      cardNumbers: currentFormCard.cardNumbers,
+    const newCard: CardType = {
+      cardNumbers: newCardValidation.cardNumbers,
       expireDate: {
-        month: currentFormCard.expireDateMonth,
-        year: currentFormCard.expireDateYear,
+        month: newCardValidation.expireDateMonth,
+        year: newCardValidation.expireDateYear,
       },
-      ownerName: currentFormCard.ownerName,
-      company: currentFormCard.company,
+      ownerName: newCardValidation.ownerName,
+      company: newCardValidation.company,
       alias: '',
+      password: newCardValidation.password,
+      cvc: newCardValidation.cvc,
       id: uuid(),
     };
     cardCtx.addCard(newCard);

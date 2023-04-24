@@ -29,6 +29,8 @@ export type CardType = {
   company: CompanyType;
   alias: string;
   id: string;
+  password: string;
+  cvc: string;
 };
 
 export type CardFormInputRefsType = {

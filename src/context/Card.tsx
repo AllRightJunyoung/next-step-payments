@@ -22,6 +22,8 @@ export const CardContext = createContext<CardContextType>({
     company: '',
     alias: '',
     id: '',
+    password: '',
+    cvc: '',
   },
   addCard: function (card: CardType) {},
   updateAlias: function (card: CardType) {},
@@ -32,7 +34,7 @@ export const CardContext = createContext<CardContextType>({
 interface ProviderProps {
   children: React.ReactNode;
 }
-const emptyCard = {
+const emptyCard: CardType = {
   cardNumbers: '',
   expireDate: {
     month: '',
@@ -42,7 +44,9 @@ const emptyCard = {
   company: '',
   alias: '',
   id: '',
-} as CardType;
+  password: '',
+  cvc: '',
+};
 
 export const CardContextProvider = ({ children }: ProviderProps) => {
   const [cardList, setCardList] = useState<CardType[]>([]);

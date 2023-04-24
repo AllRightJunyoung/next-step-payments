@@ -47,4 +47,7 @@ export const LongButton = styled(Button)`
   width: 100%;
   background-color: black;
   color: white;
+  :hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 `;
