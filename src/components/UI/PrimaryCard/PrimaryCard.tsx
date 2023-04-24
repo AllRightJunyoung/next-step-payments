@@ -24,6 +24,7 @@ const PrimaryCard = ({
           {company && <Text fontSize="s" weight="normal" label={company} />}
           {id && (
             <div>
+              <IconButton name="creditCard" size="1x" color="black" />
               <IconButton onClick={modify} name="modify" size="1x" color="black" />
               <IconButton onClick={remove} name="remove" size="1x" color="black" />
             </div>
