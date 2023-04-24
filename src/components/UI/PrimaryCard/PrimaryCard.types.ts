@@ -3,7 +3,7 @@ import { ReactEventHandler } from 'react';
 export type PrimaryCardProps = {
   size: 'small' | 'big';
   className?: string;
-  id?: string;
+  id: string;
   number: string;
   expireMonth: string;
   expireYear: string;

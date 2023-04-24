@@ -3,7 +3,7 @@ import { CardType } from '../../types';
 import { CardContext } from '../../context/Card';
 import usePage from '../../pages/usePage';
 
-const usePrimaryCard = (id: string | undefined) => {
+const usePrimaryCard = (id: string) => {
   const CardCtx = useContext(CardContext);
   const myCardList = CardCtx.cardList;
   const currentCard = myCardList.find((card: CardType) => card.id === id);
@@ -17,11 +17,21 @@ const usePrimaryCard = (id: string | undefined) => {
 
   const modify = () => {
     if (!currentCard) return;
-    localStorage.setItem('id', currentCard.id);
+    CardCtx.selectCard(currentCard);
     setPage('Alias');
   };
 
-  return { remove, modify };
+  const payment = () => {
+    if (!currentCard) return;
+    setPage('Payment');
+  };
+
+  const getCard = () => {
+    if (!currentCard) return;
+    return currentCard;
+  };
+
+  return { remove, modify, payment, getCard };
 };
 
 export default usePrimaryCard;

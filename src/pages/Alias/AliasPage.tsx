@@ -21,6 +21,7 @@ const AliasPage = () => {
       </Styled.TextWrapper>
       <Styled.CardWrapper>
         <PrimaryCard
+          id={currentCard.id}
           size="big"
           color={getCardCompnayColor(currentCard.company)}
           company={currentCard.company}

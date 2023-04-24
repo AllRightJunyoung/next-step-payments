@@ -36,7 +36,7 @@ const useFormPage = ({ cardUI, formRefs }: PropsType) => {
       id: uuid(),
     };
     cardCtx.addCard(newCard);
-    localStorage.setItem('id', newCard.id);
+    cardCtx.selectCard(newCard);
     setPage('Alias');
   };
 

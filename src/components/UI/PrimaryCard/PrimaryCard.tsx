@@ -15,16 +15,16 @@ const PrimaryCard = ({
   className,
   onClick,
 }: PrimaryCardProps) => {
-  const { remove, modify } = usePrimaryCard(id);
+  const { remove, modify, payment } = usePrimaryCard(id);
 
   return (
     <Styled.Layout id={id} className={className} onClick={onClick}>
       <Styled.Container color={color} size={size}>
         <Styled.Top>
           {company && <Text fontSize="s" weight="normal" label={company} />}
-          {id && (
+          {id !== '' && (
             <div>
-              <IconButton name="creditCard" size="1x" color="black" />
+              <IconButton onClick={payment} name="creditCard" size="1x" color="black" />
               <IconButton onClick={modify} name="modify" size="1x" color="black" />
               <IconButton onClick={remove} name="remove" size="1x" color="black" />
             </div>

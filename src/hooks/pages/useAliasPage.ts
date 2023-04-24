@@ -2,12 +2,12 @@ import { CardContext } from '../../context/Card';
 import { useRef, useContext, useState } from 'react';
 import { changeAliasLength } from '../../utils/InputChange';
 import usePage from '../../pages/usePage';
+
 const useAliasPage = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputLength, setInputLength] = useState(0);
-  const CardCtx = useContext(CardContext);
-  const cardList = CardCtx.cardList;
-  const currentCard = cardList.find((card) => card.id === localStorage.getItem('id'));
+  const cardCtx = useContext(CardContext);
+  const currentCard = cardCtx.selectedCard;
 
   const { setPage } = usePage();
 
@@ -19,7 +19,7 @@ const useAliasPage = () => {
       ...currentCard,
       alias: aliasName,
     };
-    CardCtx.updateAlias(aliasCard);
+    cardCtx.updateAlias(aliasCard);
     setPage('MyCardList');
   };
 
