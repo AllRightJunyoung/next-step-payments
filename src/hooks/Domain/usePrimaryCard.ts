@@ -1,34 +1,30 @@
 import { useContext } from 'react';
-import { CardType } from '../../types';
 import { CardContext } from '../../context/Card';
 import usePage from '../../pages/usePage';
 
-const usePrimaryCard = (id: string) => {
-  const CardCtx = useContext(CardContext);
-  const myCardList = CardCtx.cardList;
-  const currentCard = myCardList.find((card: CardType) => card.id === id);
+const usePrimaryCard = () => {
+  const cardCtx = useContext(CardContext);
+
+  const myCard = cardCtx.selectedCard;
 
   const { setPage } = usePage();
 
   const remove = () => {
-    if (!currentCard) return;
-    CardCtx.removeCard(currentCard);
+    cardCtx.removeCard(myCard);
   };
 
   const modify = () => {
-    if (!currentCard) return;
-    CardCtx.selectCard(currentCard);
+    cardCtx.selectCard(myCard);
     setPage('Alias');
   };
 
   const payment = () => {
-    if (!currentCard) return;
+    cardCtx.selectCard(myCard);
     setPage('Payment');
   };
 
   const getCard = () => {
-    if (!currentCard) return;
-    return currentCard;
+    return myCard;
   };
 
   return { remove, modify, payment, getCard };

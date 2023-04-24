@@ -15,7 +15,7 @@ const PrimaryCard = ({
   className,
   onClick,
 }: PrimaryCardProps) => {
-  const { remove, modify, payment } = usePrimaryCard(id);
+  const { remove, modify, payment } = usePrimaryCard();
 
   return (
     <Styled.Layout id={id} className={className} onClick={onClick}>

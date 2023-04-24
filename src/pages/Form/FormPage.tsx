@@ -33,7 +33,6 @@ const FormPage = () => {
       <div>
         {isOpen && <CompanyListModal onSelectCompanyList={handleCompanyList} onClose={setIsOpen} />}
         <PrimaryCard
-          id=""
           onClick={() => setIsOpen(true)}
           color={getCardCompnayColor(cardUI.company)}
           company={cardUI.company}
