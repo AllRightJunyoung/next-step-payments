@@ -1,5 +1,5 @@
 import { AppContext } from '../context/App';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import type { AppPage } from '../context/App';
 
 const usePage = () => {

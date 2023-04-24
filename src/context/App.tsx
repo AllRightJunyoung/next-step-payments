@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-export type AppPage = 'MyCardList' | 'Alias' | 'Form';
+export type AppPage = 'MyCardList' | 'Alias' | 'Form' | 'Payment';
 
 type AppContextType = {
   page: AppPage;
