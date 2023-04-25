@@ -9,19 +9,12 @@ interface AppProps {
 }
 
 function App({ className }: AppProps) {
-  const { isOpen, setIsOpen } = useUI();
-
   return (
     <PaymentAppContextProvider>
       <CardContextProvider>
-        {!isOpen && (
-          <Layout className={className}>
-            <Header>
-              <IconButton name="close" color="black" size="xl" onClick={() => setIsOpen(true)} />
-            </Header>
-            <PaymentApp />
-          </Layout>
-        )}
+        <Layout className={className}>
+          <PaymentApp />
+        </Layout>
       </CardContextProvider>
     </PaymentAppContextProvider>
   );
@@ -34,11 +27,6 @@ const Layout = styled.div`
   width: 375px;
   height: fit-content;
   min-width: 375px;
-`;
-const Header = styled.header`
-  display: flex;
-  justify-content: flex-end;
-  margin: 5px;
 `;
 
 export default App;
