@@ -1,9 +1,9 @@
-import { AppContext } from '../context/App';
+import { PaymentAppContext } from './PaymnetApp';
 import { useContext } from 'react';
-import type { AppPage } from '../context/App';
+import type { AppPage } from './PaymnetApp';
 
 const usePage = () => {
-  const appCtx = useContext(AppContext);
+  const appCtx = useContext(PaymentAppContext);
   const page = appCtx.page;
 
   const setPage = (type: AppPage) => {

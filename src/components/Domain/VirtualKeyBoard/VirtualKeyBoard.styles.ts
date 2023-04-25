@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import { FormInput } from '../../UI/';
 
 export const Layout = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 385px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 15px;
+  height: fit-content;
   border-radius: 5px 5px 15px 15px;
   display: flex;
   background: #fff;
@@ -14,6 +16,7 @@ export const Layout = styled.div`
   left: 0;
   flex-wrap: wrap;
   z-index: 9999;
+  margin: 23px;
 `;
 
 export const KeyContainer = styled.div`

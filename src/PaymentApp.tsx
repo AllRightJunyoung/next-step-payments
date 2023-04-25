@@ -2,9 +2,8 @@ import { PaymentPage } from './pages/Payment';
 import { AliasPage } from './pages/Alias';
 import { FormPage } from './pages/Form';
 import { MyCardListPage } from './pages/MyCardList';
-
-import usePage from './pages/usePage';
-import type { AppPage } from './context/App';
+import usePage from './context/usePage';
+import type { AppPage } from './context/PaymnetApp';
 
 const createPage = (page: AppPage) => {
   switch (page) {

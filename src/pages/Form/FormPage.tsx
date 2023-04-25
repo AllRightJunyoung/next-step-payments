@@ -1,5 +1,5 @@
 import * as Styled from './FormPage.styles';
-import { CardForm, CompanyListModal } from '../../components/Domain';
+import { CardForm } from '../../components/Domain';
 import { getCardCompnayColor } from '../../utils/Card';
 import { useUI } from '../../hooks/common';
 import { useCardForm } from '../../hooks/Domain';
@@ -7,8 +7,6 @@ import useFormPage from '../../hooks/pages/useFormPage';
 import { Text, Button, IconButton, PrimaryCard } from '../../components/UI';
 
 const FormPage = () => {
-  const { isOpen, setIsOpen } = useUI();
-
   const {
     cardUI,
     cardFormInputs,
@@ -31,9 +29,7 @@ const FormPage = () => {
         <Text fontSize="lg" weight="bold" label="카드추가" />
       </Styled.Header>
       <div>
-        {isOpen && <CompanyListModal onSelectCompanyList={handleCompanyList} onClose={setIsOpen} />}
         <PrimaryCard
-          onClick={() => setIsOpen(true)}
           color={getCardCompnayColor(cardUI.company)}
           company={cardUI.company}
           size="small"

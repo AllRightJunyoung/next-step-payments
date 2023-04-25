@@ -7,6 +7,7 @@ import {
   faKeyboard,
   faTrash,
   faCreditCard,
+  faClose,
 } from '@fortawesome/free-solid-svg-icons';
 
 export interface IconButtonPropsType extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -23,4 +24,5 @@ export const FontAwesomeIcons = {
   help: faCircleQuestion,
   keyboard: faKeyboard,
   creditCard: faCreditCard,
+  close: faClose,
 };

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
+  padding: 5px 20px;
+  background-color: #fff;
+  border-radius: 15px;
   height: 100%;
-  padding: 16px 24px;
 `;
 export const Header = styled.div`
   display: flex;

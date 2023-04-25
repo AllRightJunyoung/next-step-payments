@@ -1,16 +1,15 @@
 import { useContext, useEffect } from 'react';
 import { CardContext } from '../../context/Card';
-import { AppContext } from '../../context/App';
-
 import type { CardFormInputRefsType } from '../../types';
 import { isValidUserCard } from '../../utils/payment';
-import usePage from '../../pages/usePage';
+import usePage from '../../context/usePage';
+import { PaymentAppContext } from '../../context/PaymnetApp';
 
 const usePaymentPage = (refs: CardFormInputRefsType) => {
   const { setPage } = usePage();
 
   const cardCtx = useContext(CardContext);
-  const appCtx = useContext(AppContext);
+  const appCtx = useContext(PaymentAppContext);
   const myCard = cardCtx.selectedCard;
 
   useEffect(() => {
@@ -23,7 +22,6 @@ const usePaymentPage = (refs: CardFormInputRefsType) => {
   const order = () => {
     if (!refs.cvc || !refs.password) return;
     const [cvc, password] = [refs.cvc.value, refs.password.value];
-    console.log(cvc, password, myCard);
     if (!isValidUserCard(myCard, { cvc, password })) {
       alert('결제에 실패하였습니다! (올바른 입력인지 하세요!)');
       appCtx.setPayment(false);

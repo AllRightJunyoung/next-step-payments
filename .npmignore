@@ -10,3 +10,4 @@ tsconfig.json
 .storybook/
 .prettierrc
 build-storybook
+src/stories

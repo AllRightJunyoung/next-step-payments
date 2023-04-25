@@ -1,4 +1,4 @@
-import usePage from '../../pages/usePage';
+import usePage from '../../context/usePage';
 import { CardContext } from '../../context/Card';
 import { useContext } from 'react';
 

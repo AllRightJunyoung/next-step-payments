@@ -1,15 +1,16 @@
 import { CardContext } from '../../context/Card';
 import { useRef, useContext, useState, useEffect } from 'react';
 import { changeAliasLength } from '../../utils/InputChange';
-import usePage from '../../pages/usePage';
+import usePage from '../../context/usePage';
 import { usePrimaryCard } from '../../hooks/Domain';
-import { AppContext } from '../../context/App';
+import { PaymentAppContext } from '../../context/PaymnetApp';
 
 const useAliasPage = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputLength, setInputLength] = useState(0);
   const cardCtx = useContext(CardContext);
-  const appCtx = useContext(AppContext);
+  const appCtx = useContext(PaymentAppContext);
+
   const { myCard } = usePrimaryCard();
   const { setPage } = usePage();
 

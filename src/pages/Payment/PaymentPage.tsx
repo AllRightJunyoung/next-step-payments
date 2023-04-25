@@ -1,5 +1,5 @@
 import * as Styled from './PaymentPage.styles';
-import { Text, PrimaryCard, Button } from '../../components/UI';
+import { Text, PrimaryCard } from '../../components/UI';
 import { getCardCompnayColor } from '../../utils/Card';
 import usePrimaryCard from '../../hooks/Domain/usePrimaryCard';
 import { useUI } from '../../hooks/common';

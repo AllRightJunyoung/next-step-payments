@@ -3,8 +3,10 @@ import styled from 'styled-components';
 export const ToolTip = styled.span`
   display: block;
   position: absolute;
-  width: 112px;
-  height: 40px;
+  width: 120px;
+  height: fit-content;
+  text-align: center;
+
   background: #484848;
   color: white;
   border-radius: 5px;

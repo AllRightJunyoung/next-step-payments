@@ -4,7 +4,6 @@ import { PrimaryCard, Text, AddCard } from '../../components/UI';
 import { CardType } from '../../types';
 import { getCardCompnayColor } from '../../utils/Card';
 import useMyCardListPage from '../../hooks/pages/useMyCardListPage';
-
 const MyCardListPage = () => {
   const { myCardList, handleCard } = useMyCardListPage();
 

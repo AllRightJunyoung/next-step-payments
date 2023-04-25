@@ -7,8 +7,9 @@ export const Root = styled.div`
 export const ToolTip = styled.span`
   display: block;
   position: absolute;
-  width: 100px;
-  height: 40px;
+  width: 120px;
+  height: fit-content;
+  text-align: center;
   background: #484848;
   color: white;
   border-radius: 5px;

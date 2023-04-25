@@ -9,7 +9,7 @@ type AppContextType = {
   setPayment: (bool: boolean) => void;
 };
 
-export const AppContext = createContext<AppContextType>({
+export const PaymentAppContext = createContext<AppContextType>({
   page: 'MyCardList',
   changePage: function (type: AppPage) {},
   isPayment: false,
@@ -20,7 +20,7 @@ interface ProviderProps {
   children: React.ReactNode;
 }
 
-export const AppContextProvider = ({ children }: ProviderProps) => {
+export const PaymentAppContextProvider = ({ children }: ProviderProps) => {
   const [page, setPage] = useState<AppPage>('MyCardList');
   const [isPayment, setIsPayment] = useState(false);
 
@@ -37,5 +37,5 @@ export const AppContextProvider = ({ children }: ProviderProps) => {
     isPayment,
     setPayment,
   };
-  return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
+  return <PaymentAppContext.Provider value={context}>{children}</PaymentAppContext.Provider>;
 };
