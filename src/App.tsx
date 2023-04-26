@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { CardContextProvider } from './context/Card';
 import PaymentApp from './PaymentApp';
 import { IconButton } from './components/UI';
-import { PaymentAppContextProvider } from './context/PaymnetApp';
 
 interface AppProps {
   className?: string;
@@ -11,16 +10,14 @@ interface AppProps {
 
 function App({ className, onCloseButton }: AppProps) {
   return (
-    <PaymentAppContextProvider>
-      <CardContextProvider>
-        <Layout className={className}>
-          <Header>
-            <IconButton name="close" size="2x" color="black" onClick={onCloseButton} />
-          </Header>
-          <PaymentApp />
-        </Layout>
-      </CardContextProvider>
-    </PaymentAppContextProvider>
+    <CardContextProvider>
+      <Layout className={className}>
+        <Header>
+          <IconButton name="close" size="2x" color="black" onClick={onCloseButton} />
+        </Header>
+        <PaymentApp />
+      </Layout>
+    </CardContextProvider>
   );
 }
 
