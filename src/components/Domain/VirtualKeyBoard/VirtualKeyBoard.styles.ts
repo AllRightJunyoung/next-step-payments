@@ -16,7 +16,6 @@ export const Layout = styled.div`
   left: 0;
   flex-wrap: wrap;
   z-index: 9999;
-  margin: 23px;
 `;
 
 export const KeyContainer = styled.div`

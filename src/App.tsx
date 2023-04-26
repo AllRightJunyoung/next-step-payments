@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import { CardContextProvider } from './context/Card';
-import { PaymentAppContextProvider } from './context/PaymnetApp';
 import PaymentApp from './PaymentApp';
-import { IconButton } from './components/UI';
-import { useUI } from './hooks/common';
+import { PaymentAppContextProvider } from './context/PaymnetApp';
+
 interface AppProps {
   className?: string;
 }

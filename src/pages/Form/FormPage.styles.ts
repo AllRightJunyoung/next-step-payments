@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
-  padding: 5px 20px;
+  padding: 15px 20px;
   background-color: #fff;
   border-radius: 15px;
   height: 100%;

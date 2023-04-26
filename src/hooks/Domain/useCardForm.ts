@@ -89,22 +89,12 @@ const useCardForm = () => {
     }));
   };
 
-  const handleCompanyList = (e: React.MouseEvent) => {
-    const target = e.currentTarget as HTMLElement;
-    const company = target.children[1].textContent as CompanyType;
-    setCardUI((prev) => ({
-      ...prev,
-      company,
-    }));
-  };
-
   return {
     cardFormInputs,
     handleCardNumberInput,
     handleExpireMonthInput,
     handleExpireYearInput,
     handleOwnerNameInput,
-    handleCompanyList,
     cardUI,
   };
 };

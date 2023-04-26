@@ -14,7 +14,6 @@ const FormPage = () => {
     handleExpireMonthInput,
     handleExpireYearInput,
     handleOwnerNameInput,
-    handleCompanyList,
   } = useCardForm();
 
   const { handleBackButton, submit } = useFormPage({
