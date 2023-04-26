@@ -9,7 +9,7 @@ const usePayment = () => {
     if (isPayment) {
       setTimeout(() => {
         appCtx.setPayment(false);
-      }, 1000);
+      }, 2000);
     }
   }, [isPayment]);
 
