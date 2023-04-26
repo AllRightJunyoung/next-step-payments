@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { Button } from '../../components/UI';
+import { VirtualKeyBoard } from '../../components/Domain';
 
 export const Layout = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 16px 24px;
+  padding: 15px 20px;
 `;
 
 export const Header = styled.div`
@@ -20,7 +21,7 @@ export const Header = styled.div`
 `;
 
 export const CardWrapper = styled.div`
-  margin-top: 30px;
+  padding: 30px 0px;
 `;
 
 export const Box = styled.div`
@@ -36,12 +37,12 @@ export const Box = styled.div`
 export const ButtonWrapper = styled.div`
   width: 100%;
   text-align: right;
-  margin: 30px;
+  padding: 35px;
 `;
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  padding: 30px 0px;
 `;
 export const LongButton = styled(Button)`
   width: 100%;
@@ -51,3 +52,4 @@ export const LongButton = styled(Button)`
     background-color: rgba(0, 0, 0, 0.5);
   }
 `;
+export const CustomVirtualKeyBoard = styled(VirtualKeyBoard)``;

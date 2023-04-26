@@ -6,10 +6,12 @@ const usePayment = () => {
   const isPayment = appCtx.isPayment;
 
   useEffect(() => {
-    return () => {
-      appCtx.setPayment(false);
-    };
-  }, []);
+    if (isPayment) {
+      setTimeout(() => {
+        appCtx.setPayment(false);
+      }, 1000);
+    }
+  }, [isPayment]);
 
   return { isPayment };
 };

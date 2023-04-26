@@ -4,8 +4,10 @@ import { PrimaryCard, Text, AddCard } from '../../components/UI';
 import { CardType } from '../../types';
 import { getCardCompnayColor } from '../../utils/Card';
 import useMyCardListPage from '../../hooks/pages/useMyCardListPage';
+import usePayment from '../../context/usePayment';
 const MyCardListPage = () => {
   const { myCardList, handleCard } = useMyCardListPage();
+  const { isPayment } = usePayment();
 
   return (
     <Styled.Layout>
@@ -34,6 +36,7 @@ const MyCardListPage = () => {
           </Styled.CardLayout>
         ))}
       </Styled.ScrollContainer>
+      <button onClick={() => console.log(isPayment)}></button>
     </Styled.Layout>
   );
 };
