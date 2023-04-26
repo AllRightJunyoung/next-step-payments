@@ -1,3 +1,6 @@
+
+
+
 # React Payments 💳
 
 <p align="middle" >
@@ -5,19 +8,27 @@
 </p>
 
 
+
+
+
+
+
+
 ## :computer: DEMO (장바구니페이지 삽입)
 
 ### 1. 카드 등록 
-![화면-기록-2023-04-26-오후-3 00 37](https://user-images.githubusercontent.com/100929485/234485736-8921829d-7e30-4a71-b1f4-54985bd10c6d.gif)
+
+https://user-images.githubusercontent.com/100929485/234496014-65ab7b30-0359-4c85-8e50-fbc64971a2e0.mov
 
 
+### 2. 결제 완료
 
-### 2. 결제
-![화면-기록-2023-04-26-오후-3 01 30](https://user-images.githubusercontent.com/100929485/234485546-b0cd3d18-14f9-40c6-8f6d-3bc44402978a.gif)
+https://user-images.githubusercontent.com/100929485/234496111-421ade78-2073-44d7-addc-7ca710115c81.mov
+
 
 
 ### 3. 결제 실패
-![화면-기록-2023-04-26-오후-3 27 30](https://user-images.githubusercontent.com/100929485/234488315-6f6e0a91-3285-4347-8c48-acf8fe89eeaf.gif)
+https://user-images.githubusercontent.com/100929485/234496223-af323665-35bf-4773-84de-c8c320ba091a.mov
 
 
 
